@@ -7,7 +7,7 @@
 }
 /* =======================================================
 *
-* 	Template Style 
+* 	Template Style
 *
 * ======================================================= */
 body {
@@ -1484,3 +1484,7 @@ input[type="text"] {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+#backgound-img {
+  background-image: url("bg.jpg");
+}
