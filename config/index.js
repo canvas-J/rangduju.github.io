@@ -1,6 +1,6 @@
 const config = {
-  projectName: 'myApp',
-  date: '2019-7-2',
+  projectName: 'demo',
+  date: '2018-8-28',
   designWidth: 750,
   deviceRatio: {
     '640': 2.34 / 2,
@@ -13,56 +13,58 @@ const config = {
     babel: {
       sourceMap: true,
       presets: [
-        ['env', {
-          modules: false
-        }]
+        'env'
       ],
       plugins: [
-        'transform-decorators-legacy',
         'transform-class-properties',
+        'transform-decorators-legacy',
         'transform-object-rest-spread'
       ]
+    },
+    typescript: {
+      compilerOptions: {
+        allowSyntheticDefaultImports: true,
+        baseUrl: '.',
+        declaration: false,
+        experimentalDecorators: true,
+        jsx: 'preserve',
+        jsxFactory: 'Nerv.createElement',
+        module: 'commonjs',
+        moduleResolution: 'node',
+        noImplicitAny: false,
+        noUnusedLocals: true,
+        outDir: './dist/',
+        preserveConstEnums: true,
+        removeComments: false,
+        rootDir: '.',
+        sourceMap: true,
+        strictNullChecks: true,
+        target: 'es6'
+      },
+      include: [
+        'src/**/*'
+      ],
+      exclude: [
+        'node_modules'
+      ],
+      compileOnSave: false
     }
   },
   defineConstants: {
   },
   copy: {
-    patterns: [
-    ],
-    options: {
-    }
+    patterns: [],
+    options: {}
   },
   weapp: {
     module: {
       postcss: {
         autoprefixer: {
-          enable: true,
-          config: {
-            browsers: [
-              'last 3 versions',
-              'Android >= 4.1',
-              'ios >= 8'
-            ]
-          }
-        },
-        pxtransform: {
-          enable: true,
-          config: {
-
-          }
+          enable: true
         },
         url: {
           enable: true,
-          config: {
-            limit: 10240 // 设定转换尺寸上限
-          }
-        },
-        cssModules: {
-          enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
-          config: {
-            namingPattern: 'module', // 转换模式，取值为 global/module
-            generateScopedName: '[name]__[local]___[hash:base64:5]'
-          }
+          limit: 10240
         }
       }
     }
@@ -70,24 +72,11 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    esnextModules: ['taro-ui'],
     module: {
       postcss: {
         autoprefixer: {
-          enable: true,
-          config: {
-            browsers: [
-              'last 3 versions',
-              'Android >= 4.1',
-              'ios >= 8'
-            ]
-          }
-        },
-        cssModules: {
-          enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
-          config: {
-            namingPattern: 'module', // 转换模式，取值为 global/module
-            generateScopedName: '[name]__[local]___[hash:base64:5]'
-          }
+          enable: true
         }
       }
     }
