@@ -13,7 +13,7 @@ class App extends Component {
       'pages/advanced/index',
       'pages/about/index' ,
       'pages/feature/index',
-      'pages/contact/index'
+      'pages/contact/index',
     ],
     window: {
       backgroundTextStyle: 'light',

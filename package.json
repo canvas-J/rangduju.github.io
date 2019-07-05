@@ -1,8 +1,9 @@
 {
-	"name": "demo",
+	"name": "rangduju react",
 	"version": "1.0.0",
+	"homepage": "https://rangduju.com",
 	"private": true,
-	"description": "taro ui demo",
+	"description": "rangduju react",
 	"main": "index.js",
 	"scripts": {
 		"build:alipay": "taro build --type alipay",
