@@ -1,13 +1,4 @@
-# Taro UI Demo
-
-使用 Taro UI 的示例
-
-> 该仓库不是 Taro UI 示例小程序的源码，源码请查看 https://github.com/NervJS/taro-ui/blob/dev/src/app.js
-
-## 相关链接
-
-- [Taro UI 使用文档](https://taro-ui.aotu.io)
-- [Taro](https://taro.aotu.io/)
+# Rangduju Homepage Version 1
 
 ## 安装
 
