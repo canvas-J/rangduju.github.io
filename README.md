@@ -42,7 +42,3 @@ $ taro build --type h5 --watch
 $ npx taro build --type h5 --watch
 ```
 
-
-## License
-
-MIT
