@@ -1,0 +1,33 @@
+<view wx:if="{{totalprofit!=null}}">我的总收益为{{totalprofit}}</view>
+<view wx:for="{{yearlist}}">
+  <view>
+    {{item.yearID}}年的总收益为{{item.sum}}
+    <view wx:for="{{item.month}}" wx:for-item="i">
+      <view wx:if="{{i>0}}">
+        {{index + 1}}月的收益为{{i}}
+      </view>
+    </view>
+  </view>
+  <!-- <button>点击查看{{index}}的收益</button> -->
+  <!-- <view class="container">
+    <view class="title">
+      <view wx:if="{{!isMainChartDisplay}}" class="back-btn" bindtap="backToMainChart">返回</view>
+      {{chartTitle}}
+    </view>
+      <canvas canvas-id="columnCanvas" disable-scroll="true" class="canvas"  bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler">
+      </canvas>
+      <view style="text-align:center">点击数据每一项查看详情</view>
+  </view> -->
+
+</view>
+
+
+<!-- 柱状图 -->
+<!-- <view class="container">
+	<view class="title">
+		<view wx:if="{{!isMainChartDisplay}}" class="back-btn" bindtap="backToMainChart">返回</view>
+		{{chartTitle}}
+	</view>
+     <canvas canvas-id="columnCanvas" disable-scroll="true" class="canvas"  bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler"> </canvas>
+    <view style="text-align:center">点击数据每一项查看详情</view>
+</view> -->

@@ -1,0 +1,109 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+    ></button>
+    <view>
+      <button class="userinfo-nickname" bindtap="onGetOpenid">
+      {{topButtom}}
+      <view></view>
+      </button>
+    </view>
+  </view>
+
+
+<!-- 用户输入手机号 （已经不需要了） -->
+<!-- <view class="itemView">手机号：
+    <input class="input" name="userName" placeholder="请输入手机号"
+    bindinput ="phoneNumInput"/>
+</view> -->
+
+
+<!-- 登陆进入helloWorld page, 暂时隐藏 -->
+<!-- <view class="viewName" style="background-color:#fbf9fe">
+  <navigator url="../helloWorldPage/helloWorldPage" open-type="navigate" class="uploader-text">
+      <button class="loginBtn" bindtap="onGetOpenid">登录</button>
+    </navigator>
+</view> -->
+
+
+
+<!-- 将openid增加到数据库 -->
+  <!-- <view class="uploader" bindtap="onGetOpenid">
+    <navigator url="../helloWorldPage/helloWorldPage" open-type="navigate" class="uploader-text">
+      <text>登入</text>
+    </navigator>
+  </view> -->
+
+  <view class="page__bd">
+  <view class="weui-cells__title">  </view>
+  <view class="weui-cells__title" wx:if="{{hideaskCode}}" >查看范例请输入邀请码“rangduju”</view>
+    <view class="weui-cells weui-cells_after-title" wx:if="{{hideaskCode}}">
+        <view class="weui-cell weui-cell_input ">
+
+            <view class="weui-cell__bd"> 
+                <input class="weui-input" placeholder="请输入邀请码"  bindinput ="inCodeInput"/>
+            </view>
+            <view class="weui-cell__ft">
+                <view class="weui-vcode-btn" bindtap="checkUserID">确定</view>
+            </view>
+        
+        </view>
+    </view>
+        <view class="weui-cells__title">  </view>
+
+         
+  
+        <!-- wx:if中变量为true，进行渲染 -->
+        <view class="weui-cells__title" wx:if="{{signDate!=null}}"> 我从{{signDate}}开始使用让渡居 </view>
+         <!-- 通知 -->
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd" bindtap="toNotificationPage">通知</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0px" bindtap="toNotificationPage">
+                  <view style="display: inline-block;vertical-align:middle; font-size: 17px" >详细信息</view>
+                  <view hidden="{{notification == false}}" class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view>
+                  
+                </view>
+            </view>
+        </view>
+        <!-- <view class="weui-cells__title" wx:if="{{notificationWaitMessage}}"> 查询中...</view>
+        <view class="weui-cells__title" wx:if="{{noNotification}}"> 我还没有任何通知 </view> -->
+
+        <view class="weui-cells__title">  </view>
+        
+
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd" bindtap="toProfitPage">我的收益</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0" bindtap="toProfitPage">
+                  <view style="display: inline-block;vertical-align:middle; font-size: 17px;">详细信息</view>
+                </view>
+            </view>
+        </view>
+        <!-- <view class="weui-cells__title" wx:if="{{profitWaitMessage}}"> 查询中... </view>
+        <view class="weui-cells__title" wx:if="{{profit!=null}}"> 我的总收益为{{profit}}人民币 </view> -->
+        <view class="weui-cells__title">  </view>
+
+        <!-- <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">预约看房</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+                  <view style="display: inline-block;vertical-align:middle; font-size: 17px;">详细信息</view>
+                </view>
+            </view>
+        </view> -->
+    </view>
+
+        <view class="weui-footer weui-footer_fixed-bottom">
+        <view class="weui-footer__text">Copyright © 2019 让渡居</view>
+        </view>
+
+
+</view>
