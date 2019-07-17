@@ -15,5 +15,7 @@ App({
 
   globalData: {
     inCode: "",
+    curProfitHouse: "", 
+    curProfitMonth:"",
   },
 })

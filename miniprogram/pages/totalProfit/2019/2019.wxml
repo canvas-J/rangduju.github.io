@@ -1,0 +1,12 @@
+
+
+<!-- 柱状图 -->
+<view class="container">
+	<view class="title">
+		<view wx:if="{{!isMainChartDisplay}}" class="back-btn" bindtap="backToMainChart">返回</view>
+		{{chartTitle}}
+	</view>
+     <canvas canvas-id="columnCanvas" disable-scroll="true" class="canvas"  bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler"> </canvas>
+   
+</view>
+ <view style="text-align:center">点击数据条查看详情</view>

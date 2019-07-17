@@ -17,7 +17,12 @@
     "pages/management/management",
     "pages/sample/sample",
     "pages/totalProfit/totalProfit",
-    "pages/notification/notification"
+    "pages/notification/notification",
+    "pages/totalProfit/2019/2019",
+    "pages/houseList/houseList",
+    "pages/houseProfit/houseProfit",
+    "pages/totalProfit/monthlyProfit/monthlyProfit",
+    "pages/totalProfit/noProfit/noProfit"
   ],
   "tabBar": {
     "color": "#7A7E83",

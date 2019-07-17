@@ -7,9 +7,9 @@
             <view class="weui-flex__item"><view class="placeholder">让渡居</view></view>
         </view>
         </view>
-        <view class="page__desc"><image src="../images/rangduju-bg.jpg" style="width: 250px; height: 180px;"></image></view>
     </view>
     <view class="page__bd page__bd_spacing">
+      <image src="../images/rangduju-bg.jpg" style="width: 100%;"></image>
         <view class="kind-list">
             <block wx:for="{{list}}" wx:key="id">
                 <view class="kind-list__item">

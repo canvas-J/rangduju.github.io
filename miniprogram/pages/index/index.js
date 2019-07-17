@@ -8,7 +8,6 @@ Page({
         id: 'about',
         name: '关于我们',
         open: false,
-
       },
       {
         id: 'predict',
@@ -20,18 +19,12 @@ Page({
         id: 'management',
         name: '房源委托管理',
         open: false,
-
       },
       {
         id: 'feedback',
         name: '用户评价',
         open: false,
       },
-      // {
-      //   id: 'contact',
-      //   name: '联系我们',
-      //   open: false,
-      // }
     ]
   },
   kindToggle: function (e) {
@@ -69,9 +62,6 @@ Page({
     //     url: '../contact/contact',//实际路径要写全
     //   })
     // }
-
   }
 },
-
-
 );
