@@ -1,7 +1,7 @@
 //index.js
 var app = getApp()
 const db = wx.cloud.database()
-
+var util = require('../../utils/util.js')
 Page({
   data: {
     avatarUrl: './user-unlogin.png',
@@ -25,6 +25,7 @@ Page({
     signDate:null,
     notificationWaitMessage:false,
     profitWaitMessage: false,
+    buttonClicked: false, 
   },
 
   inCodeInput: function (e) {
@@ -34,6 +35,7 @@ Page({
   },
 
   onLoad: function() {
+    console.log(util)
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
@@ -203,6 +205,7 @@ toNotificationPage: function (e) {
         }
       });
     } else {
+      util.buttonClicked(this);
       wx.navigateTo({
         url: "../houseList/houseList",
       })

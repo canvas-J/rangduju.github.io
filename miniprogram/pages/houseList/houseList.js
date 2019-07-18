@@ -1,5 +1,7 @@
 // miniprogram/pages/houseList/houseList.js
 var app = getApp()
+const util = require('../../utils/util.js')
+
 
 Page({
 
@@ -8,6 +10,7 @@ Page({
    */
   data: {
     houselist: null,
+    buttonClicked: false
   },
 
   /**
@@ -42,14 +45,13 @@ Page({
     })
   },
 
-  toHousePage: function (e) {
+  toHousePage: util.throttle(function (e) {
     var id = e.currentTarget.id
     app.globalData.curProfitHouse = id
-    console.log(app.globalData.curProfitHouse)
     wx.navigateTo({
       url: "../totalProfit/totalProfit",
     })
-  },
+  }, 1000),
 
   /**
    * 生命周期函数--监听页面初次渲染完成

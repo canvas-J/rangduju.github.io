@@ -1,4 +1,6 @@
 var wxCharts = require('../../../utils/wxcharts.js');
+const util = require('../../../utils/util.js')
+
 var app = getApp();
 var columnChart = null;
 const db = wx.cloud.database();
@@ -51,7 +53,7 @@ Page({
     columnChart.scroll(e);
   },
 
-  touchEndHandler: function (e) {
+  touchEndHandler: util.throttle(function (e) {
     this.endTime = e.timeStamp
 
     // 拖动条形图处理
@@ -60,6 +62,7 @@ Page({
     }
     // 点击条形图，跳入详情页面
     else {
+
       var monthprofit = 0;
       var index = columnChart.getCurrentDataIndex(e);
       console.log("点击", index);
@@ -90,7 +93,7 @@ Page({
         }
       })
     }
-  },
+  }, 1000),
 
   onLoad: function () {
     // this.getRevenue().then(result => {if
