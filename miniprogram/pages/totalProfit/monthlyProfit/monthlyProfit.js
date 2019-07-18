@@ -62,79 +62,71 @@ Page({
           console.log("r3")
            if (index == 0) {
               monthDetail = res.data[0].year_list.year_2019.month_detail.m_1
-             dayCatagory = []
-             dayProfit = []
+              dayCatagory = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+              dayProfit = []
               for (var i = 0; i < monthDetail.length - 1; i++) {
-                dayCatagory.push(i + 1)
                 dayProfit.push(monthDetail[i + 1])
               }
             }
             if (index == 1) {
               monthDetail = res.data[0].year_list.year_2019.month_detail.m_2
-              dayCatagory = []
+              dayCatagory = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
               dayProfit = []
               for (var i = 0; i < monthDetail.length - 1; i++) {
-                dayCatagory.push(i + 1)
                 dayProfit.push(monthDetail[i + 1])
               }
             }
             if (index == 2) {
               monthDetail = res.data[0].year_list.year_2019.month_detail.m_3
-              dayCatagory = []
+              dayCatagory = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
               dayProfit = []
               for (var i = 0; i < monthDetail.length - 1; i++) {
-                dayCatagory.push(i + 1)
                 dayProfit.push(monthDetail[i + 1])
               }
             }
             if (index == 3) {
               monthDetail = res.data[0].year_list.year_2019.month_detail.m_4
-              dayCatagory = []
+              dayCatagory = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
               dayProfit = []
               for (var i = 0; i < monthDetail.length - 1; i++) {
-                dayCatagory.push(i + 1)
                 dayProfit.push(monthDetail[i + 1])
               }
             }
             if (index == 4) {
               monthDetail = res.data[0].year_list.year_2019.month_detail.m_5
-              dayCatagory = []
+              dayCatagory = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
               dayProfit = []
               for (var i = 0; i < monthDetail.length - 1; i++) {
-                dayCatagory.push(i + 1)
                 dayProfit.push(monthDetail[i + 1])
               }
             }
             if (index == 5) {
               monthDetail = res.data[0].year_list.year_2019.month_detail.m_6
-              dayCatagory = []
+              dayCatagory = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
               dayProfit = []
               for (var i = 0; i < monthDetail.length - 1; i++) {
-                dayCatagory.push(i + 1)
                 dayProfit.push(monthDetail[i + 1])
               }
             }
             if (index == 6) {
               monthDetail = res.data[0].year_list.year_2019.month_detail.m_7
-              dayCatagory = []
+              dayCatagory = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
               dayProfit = []
               for (var i = 0; i < monthDetail.length - 1; i++) {
-                dayCatagory.push(i + 1)
                 dayProfit.push(monthDetail[i + 1])
               }
             }
             if (index == 7) {
               monthDetail = res.data[0].year_list.year_2019.month_detail.m_8
-              dayCatagory = []
+              dayCatagory = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
               dayProfit = []
               for (var i = 0; i < monthDetail.length - 1; i++) {
-                dayCatagory.push(i + 1)
                 dayProfit.push(monthDetail[i + 1])
               }
             }
             if (index == 8) {
               monthDetail = res.data[0].year_list.year_2019.month_detail.m_9
-              dayCatagory = []
+              dayCatagory = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
               dayProfit = []
               for (var i = 0; i < monthDetail.length - 1; i++) {
                 dayCatagory.push(i + 1)
@@ -143,27 +135,24 @@ Page({
             }
             if (index == 9) {
               monthDetail = res.data[0].year_list.year_2019.month_detail.m_10
-              dayCatagory = []
+              dayCatagory = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
               dayProfit = []
               for (var i = 0; i < monthDetail.length - 1; i++) {
-                dayCatagory.push(i + 1)
                 dayProfit.push(monthDetail[i + 1])
               }
             }
             if (index == 10) {
               monthDetail = res.data[0].year_list.year_2019.month_detail.m_11
-              day_catagory = []
+              dayCatagory = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
               for (var i = 0; i < monthDetail.length - 1; i++) {
-                dayCatagory.push(i + 1)
                 dayProfit.push(monthDetail[i + 1])
               }
             }
           if (index == 11) {
             monthDetail = res.data[0].year_list.year_2019.month_detail.m_12
-            dayCatagory = []
+            dayCatagory = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
             dayProfit = []
             for (var i = 0; i < monthDetail.length - 1; i++) {
-              dayCatagory.push(i + 1)
               dayProfit.push(monthDetail[i + 1])
             }
           }
@@ -226,11 +215,7 @@ Page({
           });
         },
         fail: err => {
-          wx.showToast({
-            icon: 'none',
-            title: '查询记录失败'
-          })
-          console.error('[数据库] [查询记录] 失败：', err)
+          console.error('xxxxx[数据库] [查询记录] 失败：', err)
         }
       })
       // return resolve();

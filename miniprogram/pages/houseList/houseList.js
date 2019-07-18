@@ -45,13 +45,14 @@ Page({
     })
   },
 
-  toHousePage: util.throttle(function (e) {
+  toHousePage: function (e) {
     var id = e.currentTarget.id
     app.globalData.curProfitHouse = id
+    util.buttonClicked(this)
     wx.navigateTo({
       url: "../totalProfit/totalProfit",
     })
-  }, 1000),
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

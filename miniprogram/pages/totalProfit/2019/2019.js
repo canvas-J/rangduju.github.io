@@ -45,15 +45,15 @@ Page({
       }]
     });
   },
-  touchHandler: function (e) {
+  touchHandler: util.throttle(function (e) {
     this.startTime = e.timeStamp;
     columnChart.scrollStart(e);
-  },
+  },700),
   moveHandler: function (e) {
     columnChart.scroll(e);
   },
 
-  touchEndHandler: util.throttle(function (e) {
+  touchEndHandler: function (e) {
     this.endTime = e.timeStamp
 
     // 拖动条形图处理
@@ -93,7 +93,7 @@ Page({
         }
       })
     }
-  }, 1000),
+  },
 
   onLoad: function () {
     // this.getRevenue().then(result => {if
@@ -184,10 +184,6 @@ Page({
           });
         },
         fail: err => {
-          wx.showToast({
-            icon: 'none',
-            title: '查询记录失败'
-          })
           console.error('[数据库] [查询记录] 失败：', err)
         }
       })
