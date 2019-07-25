@@ -35,9 +35,10 @@ Page({
         address: getApp().globalData.curProfitHouse
       }).get({
         success: res => {
-          console.log("-------", res)     
+          console.log("-------", res) 
+          console.log("--", res.data[0].all_year_profit_landlord.toFixed(2))    
           this.setData({
-            totalprofit: res.data[0].all_year_profit.toFixed(2),
+            totalprofit: res.data[0].all_year_profit_landlord.toFixed(2),
             yearlist: res.data[0].year_list
           })
           console.log(totalprofit, yearlist)

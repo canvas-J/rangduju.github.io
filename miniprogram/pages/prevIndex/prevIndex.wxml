@@ -43,7 +43,7 @@
 
   <view class="page__bd">
   <view class="weui-cells__title">  </view>
-  <view class="weui-cells__title" wx:if="{{hideaskCode}}" >查看范例请输入邀请码“rangduju”</view>
+  <!-- <view class="weui-cells__title" wx:if="{{hideaskCode}}" >查看范例请输入邀请码“rangduju”</view> -->
     <view class="weui-cells weui-cells_after-title" wx:if="{{hideaskCode}}">
         <view class="weui-cell weui-cell_input ">
 

@@ -1,11 +1,10 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/databaseGuide/databaseGuide",
     "pages/prevIndex/prevIndex",
-    "pages/predict/predict",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib",
@@ -22,28 +21,11 @@
     "pages/houseList/houseList",
     "pages/houseProfit/houseProfit",
     "pages/totalProfit/monthlyProfit/monthlyProfit",
-    "pages/totalProfit/noProfit/noProfit"
+    "pages/totalProfit/noProfit/noProfit",
+    "pages/houseDetail/houseDetail",
+    "pages/service/service"
   ],
-  "tabBar": {
-    "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
-    "borderStyle": "black",
-    "backgroundColor": "#ffffff",
-    "list": [
-      {
-        "pagePath": "pages/home/home",
-        "iconPath": "images/icon_component.png",
-        "selectedIconPath": "images/icon_component_HL.png",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/prevIndex/prevIndex",
-        "iconPath": "images/icon_API.png",
-        "selectedIconPath": "images/icon_API_HL.png",
-        "text": "我的"
-      }
-    ]
-  },
+
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",

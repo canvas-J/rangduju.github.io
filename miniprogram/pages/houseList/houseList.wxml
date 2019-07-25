@@ -1,10 +1,12 @@
 <!--miniprogram/pages/houseList/houseList.wxml-->
+<view class="weui-cells__title" style="text-align:center"> 已托管房源{{houselist.length}}套 </view>
+
 <view wx:for="{{houselist}}" wx:for-item="i">
   <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_access">
-          <view class="weui-cell__bd" id="{{i}}" bindtap="{{!buttonClicked?toHousePage:''}}">{{i}}</view>
+          <view class="weui-cell__bd" id="{{i}}" bindtap="toHousePage">{{i}}</view>
           <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0" id="{{i}}" bindtap="toHousePage">
-            <view id="{{i}}" bindtap="toHousePage" style="display: inline-block;vertical-align:middle; font-size: 17px;">查看收益</view>
+          <view id="{{i}}" style="display: inline-block;vertical-align:middle; font-size: 17px;">查看详情</view>
           </view>
       </view>
   </view>

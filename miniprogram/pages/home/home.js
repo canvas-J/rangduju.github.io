@@ -5,8 +5,8 @@ Page({
   data: {
     list: [
       {
-        id: 'about',
-        name: '关于我们',
+        id: 'landlord',
+        name: '我是房东',
         open: false,
         
       },
@@ -23,8 +23,8 @@ Page({
         
       // },
       {
-        id: 'feedback',
-        name: '用户评价',
+        id: 'service',
+        name: '我是服务方',
         open: false,
       },
       // {
@@ -44,10 +44,10 @@ Page({
           url: '../management/management'//实际路径要写全
         })
       }
-      else if (id === "about") {
+      else if (id === "landlord") {
         console.log(id)
         wx.navigateTo({
-          url: '../about/about'//实际路径要写全
+          url: '../prevIndex/prevIndex'//实际路径要写全
         })
       }
       
@@ -57,10 +57,10 @@ Page({
           url: '../predict/predict'//实际路径要写全
         })
       }
-      else if (id === "feedback") {
+      else if (id === "service") {
         console.log(id)
         wx.navigateTo({
-          url: '../feedback/feedback'//实际路径要写全
+          url: '../service/service'//实际路径要写全
         })
       }
       // else if (id === "contact") {

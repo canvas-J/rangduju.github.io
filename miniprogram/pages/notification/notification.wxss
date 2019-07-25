@@ -1,1 +1,8 @@
 /* miniprogram/pages/notification/notification.wxss */
+.weui-form-preview{
+    margin-bottom: 25px;
+}
+
+view, text{
+  word-break: break-all;
+}

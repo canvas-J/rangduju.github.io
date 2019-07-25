@@ -26,26 +26,59 @@ Page({
     dat: null,
     totalprofit: null,
     yearlist: null,
-    months: null
+    months: null,
+    monthly_checkin_percentage: null
   },
-  touchHandler: function (e) {
-    columnChart.scrollStart(e);
-  },
-  moveHandler: function (e) {
-    columnChart.scroll(e);
-  },
-  touchEndHandler: function (e) {
-    columnChart.scrollEnd(e);
-  },
+  // touchHandler: function (e) {
+  //   columnChart.scrollStart(e);
+  // },
+  // moveHandler: function (e) {
+  //   columnChart.scroll(e);
+  // },
+  // touchEndHandler: function (e) {
+  //   columnChart.scrollEnd(e);
+  // },
 
   onLoad: function () {
     // this.getRevenue().then(result => {if
     //   this.show();
     // });
-    this.getRevenue()
+    // this.getRevenue()
+    this.onQuery()
+
   },
 
-  //  这个function是画柱状图用的
+  onQuery: function () {
+    var index = getApp().globalData.curProfitMonth
+    this.setData({
+      monthNum: index + 1
+    })
+    const db = wx.cloud.database()
+    // 查询当前用户所有的 counters
+    db.collection('house_profit').where({
+      address: getApp().globalData.curProfitHouse
+    }).get({
+      success: res => {
+        console.log("-------------")
+        console.log('=====[数据库] [查询记录] 成功: ', res)
+        console.log('=====++[数据库] [查询记录] 成功: ', res.data[0].year_list.year_2019.montly_checkin_percentage[index])
+        this.setData({
+          monthly_checkin_percentage: res.data[0].year_list.year_2019.montly_checkin_percentage[index].toFixed(2),
+          revenue: res.data[0].year_list.year_2019.months[index].toFixed(2)
+        })
+        console.log('=====[数据库] [查询记录] 成功: ', res)
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '查询记录失败'
+        })
+        console.error('[数据库] [查询记录] 失败：', err)
+      }
+    })
+  },
+
+  //  这个function是画柱状图用的, 暂时用不到
   getRevenue: function () {
     var index = getApp().globalData.curProfitMonth
     this.setData({

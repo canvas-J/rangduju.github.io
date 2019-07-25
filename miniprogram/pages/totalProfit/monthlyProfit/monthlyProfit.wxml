@@ -1,11 +1,12 @@
+<view wx:if="{{revenue != null}}"> {{monthNum}}月总收益为{{revenue}} </view>
+<view wx:if="{{monthly_checkin_percentage != null}}"> {{monthNum}}月入住率为{{monthly_checkin_percentage}}% </view>
 
 <!-- 柱状图 -->
-<view class="container">
+<!-- <view class="container">
 	<view class="title">
 		<view wx:if="{{!isMainChartDisplay}}" class="back-btn" bindtap="backToMainChart">返回</view>
 		{{monthNum}}{{chartTitle}}
 	</view>
      <canvas canvas-id="columnCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler"> </canvas>
    
-</view>
- <view style="text-align:center">点击数据每一项查看详情</view>
+</view> -->

@@ -10,7 +10,7 @@
 	},
 	"appid": "wxa712c55f4c3f00c8",
 	"projectname": "rangduju-test",
-	"libVersion": "2.2.5",
+	"libVersion": "2.7.7",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {

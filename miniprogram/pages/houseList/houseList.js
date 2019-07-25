@@ -50,7 +50,7 @@ Page({
     app.globalData.curProfitHouse = id
     util.buttonClicked(this)
     wx.navigateTo({
-      url: "../totalProfit/totalProfit",
+      url: "../houseDetail/houseDetail",
     })
   },
 

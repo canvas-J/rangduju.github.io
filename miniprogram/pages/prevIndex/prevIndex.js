@@ -55,11 +55,14 @@ Page({
                 userInfo: res.userInfo,
                 topButtom: res.userInfo.nickName
               })
+              console.log(res)
             }
           })
         }
       }
     })
+
+    this.onGetOpenid()
   },
 
   onGetUserInfo: function(e) {
@@ -82,6 +85,7 @@ Page({
         // console.log("电话号是："+this.data.phoneNum)
         app.globalData.openid = res.result.openid
         // this.curUser = res.result.openid
+        console.log("openid", res.result.openid)
         
       },
       fail: err => {

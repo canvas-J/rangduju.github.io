@@ -1,0 +1,4 @@
+/* miniprogram/pages/houseDetail/houseDetail.wxss */
+.weui-form-preview{
+    margin-bottom: 25px;
+}

@@ -1,2 +1,30 @@
 <!--miniprogram/pages/notification/notification.wxml-->
-<text>暂无通知</text>
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">通知</view>
+        <view class="page__desc"></view>
+    </view>
+    <view class="page__bd">
+      <view wx:for="{{notificationList}}" wx:for-item="name" wx:for-index="id">
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">发起人: {{name[1]}}</view>
+                    <view class="weui-form-preview__label">时间: {{name[2]}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd" >
+            <view>{{notification_body_list[id][0]}}</view>
+              <view wx:for="{{notification_body_list[id]}}" wx:for-index="line">
+                <text>\n</text>
+                <text>{{notification_body_list[id][line+1]}}\n</text>
+                <!-- <text space="ensp">    {{notification_body_list[id][line+1]}}</text> -->
+              </view>
+            </view>
+            <!-- <view class="weui-form-preview__ft">
+                <view bindtap="handleRead" id="{{notificationList.length-id-1}}" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">已阅</view>
+            </view> -->
+        </view>
+      </view>
+    </view>
+</view>
