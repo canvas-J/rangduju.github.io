@@ -1,10 +1,11 @@
 // miniprogram/pages/houseList/houseList.js
+// Created by: Liuting Chen
+// 根据邀请码查找房源list
+
 var app = getApp()
 const util = require('../../utils/util.js')
 
-
 Page({
-
   /**
    * 页面的初始数据
    */

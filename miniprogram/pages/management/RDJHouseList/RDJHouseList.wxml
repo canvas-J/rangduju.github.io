@@ -1,0 +1,71 @@
+<!--miniprogram/pages/management/RDJHouseList/RDJHouseList.wxml-->
+<!-- Created by: Liuting Chen -->
+
+<wxs module="Fix" src="fix.wxs"></wxs>
+<view class="weui-search-bar">
+  <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input" placeholder="搜索 共 {{totalHouseNum}} 个房源" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="search" />
+      <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+    <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+      <icon class="weui-icon-search" type="search" size="14"></icon>
+      <view class="weui-search-bar__text"> 搜索 共 {{totalHouseNum}} 个房源</view>
+    </label>
+  </view>
+  <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInputReload">返回</view>
+</view>
+<view wx:if="{{contract_start == null}}" class="page__hd">
+  <view class="page__desc">暂无数据</view>
+</view>
+
+<view>
+  <view class="page__hd" wx:if="{{contract_start != null}}">
+    <view class="page__title">{{address}}</view>
+    <view class="page__desc">合同起始日：{{contract_start}}</view>
+    <view class="page__desc">合同期限：{{contract_duration}} 个月</view>
+    <view class="page__desc">初期空置期：{{hold_period}}</view>
+    <view class="page__desc">管理费率：{{m_fee_percentage}}</view>
+    <view class="page__desc">超额收益分成比例：{{landlord_profit_percentage}}</view>
+    <view class="page__desc">基础租金收益：{{base_profit}} 元 / 天</view>
+    <view class="page__desc">保本租金收益：{{safety_profit}} 元 / 天</view>
+    <view class="page__desc"></view>
+    <view class="page__desc"></view>
+  </view>
+</view>
+
+<view class="page__bd" wx:if="{{contract_start != null}}">
+  <view wx:for="{{monthly_coop_days_2019}}" wx:for-index="id">
+    <view wx:if="{{reservation_days_2019[id] != 0}}" class="weui-form-preview">
+      <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">{{id}}月</view>
+          <view class="weui-form-preview__value_in-hd">
+            <button class="weui-btn mini-btn" type="default" data-idx="{{id}}" size="mini" bindtap="toMonthProfit">点击查看当月收益</button>
+          </view>
+        </view>
+      </view>
+      <view class="weui-form-preview__bd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">合作天数</view>
+          <view class="weui-form-preview__value">{{monthly_coop_days_2019[id]}} 天</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">已出租天数</view>
+          <view class="weui-form-preview__value">{{reservation_days_2019[id]}} 天</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">入住率</view>
+          <view class="weui-form-preview__value">{{Fix.toFix(monthly_checkin_percentage[id])}} %</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">当月预定平均价格</view>
+          <view class="weui-form-preview__value">{{Fix.toFix(monthly_avg_revenue_2019[id])}} 元</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

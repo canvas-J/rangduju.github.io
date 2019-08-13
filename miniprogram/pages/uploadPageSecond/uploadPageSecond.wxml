@@ -1,0 +1,31 @@
+<!--miniprogram/pages/uploadPageSecond/uploadPageSecond.wxml-->
+<!-- Created by: Liuting Chen -->
+<view class="weui-cells__title"> 请添加保洁后照片 </view>
+
+<block wx:for="{{positions}}" wx:for-index="id" wx:key="*this">
+  <view class="button-sp-area">
+    <button class="weui-btn" type="primary" bindtap="chooseImageID" data-idx="{{id}}" wx:if="{{uploadRes[id] != true && imgChoose[id] != true}}">添加{{item}}的图片</button>
+    <button class="weui-btn" style='background-color:{{color}}' data-idx="{{id}}" wx:if="{{uploadRes[id] != true && imgChoose[id] == true}}">添加{{item}}的图片</button>
+  </view>
+  <view class="question-images">
+    <!-- 图片缩略图  -->
+    <image class="q-image" src="{{images[id]}}" mode="aspectFill" data-idx="{{id}}" bindtap="handleImagePreviewID" wx:if="{{imgChoose[id] == true}}"></image>
+    <image class="q-image" src="../images/{{item}}.png" mode="aspectFill" wx:if="{{imgChoose[id] != true}}"></image>
+    <!-- 移除图片的按钮  -->
+    <!-- <view class="q-image-remover" bindtap="removeImageID" data-idx="{{id}}" wx:if="{{uploadRes[id] != true && imgChoose[id] == true }}">删除</view> -->
+    <button class="weui-btn mini-btn" type="warn" size="mini" bindtap="removeImageID" data-idx="{{id}}" wx:if="{{uploadRes[id] != true && imgChoose[id] == true }}">删除</button>
+  </view>
+  <!-- 提交按钮  -->
+  <view class="button-sp-area">
+    <button class="weui-btn" style='background-color:{{color}}' wx:if="{{uploadRes[id] != true && loading[id] == true}}">上传中...</button>
+    <button class="weui-btn" style='background-color:{{color}}' wx:if="{{uploadRes[id] == true && loading[id] == true}}">{{item}}的图片上传成功！</button>
+    <button class="weui-btn" type="primary" bindtap="doUploadID" data-idx="{{id}}" wx:if="{{uploadRes[id] != true && loading[id] != true}}">上传</button>
+  </view>
+
+  <view class="weui-loadmore weui-loadmore_line" wx:if="{{id != positions.length-1}}">
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line"></view>
+  </view>
+</block>
+<view class="button-sp-area">
+  <button class="weui-btn" type="primary" bindtap="finish">完成并离开</button>
+</view>

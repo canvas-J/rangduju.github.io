@@ -1,3 +1,4 @@
+// 小数点后保留两位
 var Fix = {
   toFix: function (value) {
     return value.toFixed(2)//此处1为保留一位小数

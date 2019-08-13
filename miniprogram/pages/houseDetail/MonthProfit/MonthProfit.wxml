@@ -1,0 +1,22 @@
+<!--miniprogram/pages/houseDetail/MonthProfit/MonthProfit.wxml-->
+<!-- Created by: Liuting Chen -->
+<view>
+  <view class="page__hd">
+    <view class="page__title">{{address}}</view>
+    <view class="page__title">{{month}}月收益展示</view>
+    <view class="page__desc">本月总收入：{{allRevenue}} RMB</view>
+    <view class="page__desc">管理费：{{mfee}} RMB</view>
+    <view class="page__desc">扣除管理费后总收入：{{ebs}} RMB</view>
+    <view class="page__desc">---- </view>
+    <view class="page__desc">超额收益：{{extraProfit}} RMB</view>
+    <view class="page__desc">房东毛收益：{{landlordGrossIncome}} RMB</view>
+     <view class="page__desc">---- </view>
+    <view class="page__desc">总可变成本：{{variableCost}} RMB</view>
+    <view class="page__desc">总固定成本：{{cost}} RMB</view>
+     <view class="page__desc">---- </view>
+    <view class="page__desc">房东代支付：{{landlordRefund}} RMB</view>
+    <view class="page__desc" style='font-weight:bold'>房东净收益：{{landlordProfit}} RMB</view>
+    <view class="page__desc"></view>
+    <view class="page__desc"></view>
+  </view>
+</view>

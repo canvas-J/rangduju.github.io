@@ -1,0 +1,47 @@
+/* miniprogram/pages/getCleanImage/getCleanimage.wxss */
+/* page {
+ background: #7a7a7a75;
+} */
+/* 卡片 */
+.item-container {
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ transition: 0.3s;
+ width: 92%;
+ margin: 4%;
+ display: flex;
+ flex-direction: column;
+ background: white;
+ padding-top: 5pt;
+ padding-bottom: 5pt;
+ border-radius: 5px;
+}
+/* 上传人 */
+
+.item-name {
+ font-size: 12px;
+ margin-left: 15px;
+}
+/* 图片 */
+.img {
+ width: 100px;
+ height: 100px;
+ margin-top: 10px;
+ margin-left: 20px;
+}
+.fabu{
+ width: 40px;
+ height: 40px;
+ position: fixed;
+ bottom: 30px;
+ right: 15px;
+}
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}

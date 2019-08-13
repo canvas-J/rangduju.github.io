@@ -1,2 +1,60 @@
 <!--miniprogram/pages/management/management.wxml-->
-<text>miniprogram/pages/management/management.wxml</text>
+<!-- Created by: Liuting Chen -->
+
+<view class="container">
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
+    <view>
+      <button class="userinfo-nickname" bindtap="onGetOpenid">
+        {{topButtom}}
+        <view></view>
+      </button>
+    </view>
+  </view>
+
+  <view class="weui-cells__title"> </view>
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title" wx:if="{{hideaskCode}}">
+      <view class="weui-cell weui-cell_input ">
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入验证码" bindinput="inCodeInput" />
+        </view>
+        <view class="weui-cell__ft">
+          <view class="weui-vcode-btn" bindtap="checkUserID">确定</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells__title"> </view>
+
+    <view class="weui-cells__title"> </view>
+
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_access">
+        <view class="weui-cell__bd" bindtap="{{!buttonClicked?'toGetCleanImg':''}}">保洁质量验收</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0" bindtap="{{!buttonClicked?'toGetCleanImg':''}}">
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cells__title"> </view>
+
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_access">
+        <view class="weui-cell__bd" bindtap="{{!buttonClicked?'toHouseList':''}}">查看房源信息</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0" bindtap="{{!buttonClicked?'toHouseList':''}}">
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cells__title"> </view>
+  </view>
+
+  <view class="weui-footer weui-footer_fixed-bottom">
+    <view class="button-sp-area">
+      <button class="weui-btn" type="warn" bindtap="{{!buttonClicked?'logout':''}}">退出登陆</button>
+    </view>
+  </view>
+
+
+</view>

@@ -1,28 +1,35 @@
 <!--miniprogram/pages/home/home.wxml-->
+<!-- Created by: Liuting Chen -->
 <view class="page">
-    <view class="page__hd">
-        <view class="page__title">
-            <view class="weui-flex">
-            <view class="weui-flex__item"><view class="placeholder"><image src="../images/logo.png" style="width: 84px; height: 84px;"></image></view></view>
-            <view class="weui-flex__item"><view class="placeholder">让渡居</view></view>
+  <view class="page__hd">
+    <view class="page__title">
+      <view class="weui-flex">
+        <view class="weui-flex__item">
+          <view class="placeholder">
+            <image src="../images/logo.png" style="width: 84px; height: 84px;"></image>
+          </view>
         </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">让渡居</view>
         </view>
+      </view>
     </view>
-    <view class="page__bd page__bd_spacing">
-      <image src="../images/rangduju-bg.jpg" style="width: 100%;"></image>
-        <view class="kind-list">
-            <block wx:for="{{list}}" wx:key="id">
-                <view class="kind-list__item">
-                    <view id="{{item.id}}" class="weui-flex kind-list__item-hd {}" bindtap="kindToggle">
-                        <view class="weui-flex__item">{{item.name}}</view>
-                        <image class="kind-list__img" src="../images/icon_nav_{{item.id}}.png"></image>
-                    </view>
-            
-                </view>
-            </block>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <image src="../images/rangduju-bg.jpg" style="width: 100%;"></image>
+    <view class="kind-list">
+      <block wx:for="{{list}}" wx:key="id">
+        <view class="kind-list__item">
+          <view id="{{item.id}}" class="weui-flex kind-list__item-hd {}" bindtap="kindToggle">
+            <view class="weui-flex__item">{{item.name}}</view>
+            <image class="kind-list__img" src="../images/icon_nav_{{item.id}}.png"></image>
+          </view>
+
         </view>
+      </block>
     </view>
-    <view class="page__ft">
-        <!-- @Powered by Rangduju -->
-    </view>
+  </view>
+  <view class="page__ft">
+    <view class="weui-footer__text" style="color:#A9A9A9">Copyright © 2019 让渡居</view>
+  </view>
 </view>

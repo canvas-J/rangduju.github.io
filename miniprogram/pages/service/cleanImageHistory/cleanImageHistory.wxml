@@ -1,0 +1,12 @@
+<!--miniprogram/pages/service/cleanImageHistory/cleanImageHistory.wxml-->
+<!-- Created by: Liuting Chen -->
+
+<block wx:for="{{dataList}}" wx:key="item" wx:for-index="id">
+ <view class='item-container'>
+  <text class='item-name'>上传人邀请码：{{item.invCode}}</text>
+  <text class='item-name'>照片内容：{{item.name}} {{item.status}}</text>
+  <text class='item-name'>上传时间：{{item.time}}</text>
+  <image class='img' src='{{item.imgUrl}}' data-idx="{{id}}" bindtap="handleImagePreviewID"></image>
+ </view>
+</block>
+<image bindtap='qufabu' class='fabu' src='../../images/fabu.png'></image>

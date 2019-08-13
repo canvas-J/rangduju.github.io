@@ -1,0 +1,13 @@
+var Include = {
+  include: function (value, list) {
+    for (var i = 0; i < list.length; i++) {
+      if (value == list[i]) {
+        return true
+      }
+    }
+    return false
+  }
+}
+module.exports = {
+  include: Include.include
+}

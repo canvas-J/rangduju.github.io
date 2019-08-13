@@ -1,0 +1,40 @@
+<!--miniprogram/pages/uploadImage/uploadImage.wxml-->
+<!-- Created by: Liuting Chen -->
+
+<button class="weui-btn" type="primary" bindtap="chooseImage" wx:if="{{images.length < 9}}">添加图片</button>
+
+<view class="question-images">
+  <block wx:for="{{images}}" wx:for-index="id" wx:key="*this" wx:if="{{id < 3}}">
+    <view class="q-image-wrap">
+      <!-- 图片缩略图  -->
+      <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{id}}" bindtap="handleImagePreview"></image>
+      <!-- 移除图片的按钮  -->
+      <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
+    </view>
+  </block>
+</view>
+
+<view class="question-images">
+  <block wx:for="{{images}}" wx:for-index="id" wx:key="*this" wx:if="{{id > 2}}">
+    <view class="q-image-wrap" wx:if="{{id < 6}}">
+      <!-- 图片缩略图  -->
+      <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{id}}" bindtap="handleImagePreview"></image>
+      <!-- 移除图片的按钮  -->
+      <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
+    </view>
+  </block>
+</view>
+
+<view class="question-images">
+  <block wx:for="{{images}}" wx:for-index="id" wx:key="*this" wx:if="{{id > 5}}">
+    <view class="q-image-wrap" wx:if="{{id < 10}}">
+      <!-- 图片缩略图  -->
+      <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{id}}" bindtap="handleImagePreview"></image>
+      <!-- 移除图片的按钮  -->
+      <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">删除</view>
+    </view>
+  </block>
+</view>
+
+<!-- 提交按钮  -->
+<button class="weui-btn" type="primary" bindtap="doUpload">上传</button>

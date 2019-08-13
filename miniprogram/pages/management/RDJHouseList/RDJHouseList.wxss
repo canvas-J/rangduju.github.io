@@ -1,0 +1,4 @@
+/* miniprogram/pages/management/RDJHouseList/RDJHouseList.wxss */
+.weui-form-preview{
+    margin-bottom: 25px;
+}

@@ -28,7 +28,70 @@ function throttle(fn, gapTime) {
   }
 }
 
+function formatNumber(n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
+/** 
+ * 时间戳转化为年 月 日 时 分 秒 
+ * number: 传入时间戳 
+ * format：返回格式，支持自定义，但参数必须与formateArr里保持一致 
+*/
+function formatDate(inputTime) {
+  var date = new Date(inputTime);
+  var y = date.getFullYear();
+  var m = date.getMonth() + 1;
+  m = m < 10 ? ('0' + m) : m;
+  var d = date.getDate();
+  d = d < 10 ? ('0' + d) : d;
+  var h = date.getHours();
+  h = h < 10 ? ('0' + h) : h;
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+  minute = minute < 10 ? ('0' + minute) : minute;
+  second = second < 10 ? ('0' + second) : second;
+  return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second;
+};
+
+function formatMonth(inputTime) {
+  var date = new Date(inputTime);
+  var y = date.getFullYear();
+  var m = date.getMonth() + 1;
+  m = m < 10 ? (m) : m;
+  var d = date.getDate();
+  d = d < 10 ? (d) : d;
+  var h = date.getHours();
+  h = h < 10 ? ( h) : h;
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+  minute = minute < 10 ? ('0' + minute) : minute;
+  second = second < 10 ? ('0' + second) : second;
+  return m;
+};
+
+function formatYear(inputTime) {
+  var date = new Date(inputTime);
+  var y = date.getFullYear();
+  var m = date.getMonth() + 1;
+  m = m < 10 ? (m) : m;
+  var d = date.getDate();
+  d = d < 10 ? (d) : d;
+  var h = date.getHours();
+  h = h < 10 ? (h) : h;
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+  minute = minute < 10 ? ('0' + minute) : minute;
+  second = second < 10 ? ('0' + second) : second;
+  return y;
+};
+
+
+
 module.exports = {
   buttonClicked: buttonClicked,
-  throttle: throttle
+  throttle: throttle,
+  formatDate: formatDate,
+  formatMonth: formatMonth,
+  formatYear: formatYear
 }

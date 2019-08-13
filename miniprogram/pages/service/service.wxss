@@ -1,5 +1,4 @@
 /* miniprogram/pages/service/service.wxss */
-/**index.wxss**/
 
 page {
   background: #f6f6f6;
@@ -10,7 +9,7 @@ page {
 
 .userinfo, .uploader, .tunnel {
   margin-top: 40rpx;
-  height: 140rpx;
+  height: 220rpx;
   width: 100%;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -23,8 +22,8 @@ page {
 }
 
 .userinfo-avatar {
-  width: 100rpx;
-  height: 100rpx;
+  width: 180rpx;
+  height: 180rpx;
   margin: 20rpx;
   border-radius: 50%;
   background-size: cover;
@@ -36,7 +35,7 @@ page {
 }
 
 .userinfo-nickname {
-  font-size: 32rpx;
+  font-size: 40rpx;
   color: #007aff;
   background-color: white;
   background-size: cover;
@@ -135,4 +134,10 @@ page {
   font-size: 24rpx;
   line-height: 36rpx;
   word-break: break-all;
+}
+
+.button-sp-area{
+    margin: 0 auto;
+    padding-top: 15px;
+    width: 60%;
 }

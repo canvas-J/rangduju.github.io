@@ -1,30 +1,40 @@
 <!--miniprogram/pages/notification/notification.wxml-->
+<!-- Created by: Liuting Chen -->
+
+<wxs module="Include" src="include.wxs"></wxs>
 <view class="page">
-    <view class="page__hd">
-        <view class="page__title">通知</view>
-        <view class="page__desc"></view>
-    </view>
-    <view class="page__bd">
-      <view wx:for="{{notificationList}}" wx:for-item="name" wx:for-index="id">
-        <view class="weui-form-preview">
-            <view class="weui-form-preview__hd">
-                <view class="weui-form-preview__item">
-                    <view class="weui-form-preview__label">发起人: {{name[1]}}</view>
-                    <view class="weui-form-preview__label">时间: {{name[2]}}</view>
-                </view>
-            </view>
-            <view class="weui-form-preview__bd" >
-            <view>{{notification_body_list[id][0]}}</view>
-              <view wx:for="{{notification_body_list[id]}}" wx:for-index="line">
-                <text>\n</text>
-                <text>{{notification_body_list[id][line+1]}}\n</text>
-                <!-- <text space="ensp">    {{notification_body_list[id][line+1]}}</text> -->
-              </view>
-            </view>
-            <!-- <view class="weui-form-preview__ft">
-                <view bindtap="handleRead" id="{{notificationList.length-id-1}}" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">已阅</view>
-            </view> -->
+  <view class="page__hd">
+    <view class="page__title">通知</view>
+    <view class="page__desc"></view>
+  </view>
+  <view class="page__bd">
+    <view wx:for="{{idList}}" wx:for-item="item" wx:for-index="index">
+      <view class="weui-form-preview">
+        <view class="weui-form-preview__hd">
+          <view class="weui-form-preview__item">
+            <view class="weui-form-preview__label">发起人: {{senderList[index]}}</view>
+            <view class="weui-form-preview__label">时间: {{timeList[index]}}</view>
+
+          </view>
+        </view>
+        <view class="weui-form-preview__bd">
+          <view>{{notification_body_list[index][0]}}</view>
+          <view wx:for="{{notification_body_list[index]}}" wx:for-index="line">
+            <text>\n</text>
+            <text>{{notification_body_list[index][line+1]}}\n</text>
+          </view>
+        </view>
+        <view class="weui-form-preview__ft">
+          <!-- 此处根据idList[index]是否在readID中判断该通知是否已读 -->
+          <view bindtap="handleRead" id="{{item}}" class="weui-form-preview__btn weui-form-preview__btn_default" wx:if="{{Include.include(idList[index],readID) || readList[index] == true}}">
+            已阅
+          </view>
+          <view bindtap="handleRead" id="{{index}}" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" wx:else>
+            已阅
+          </view>
+
         </view>
       </view>
     </view>
+  </view>
 </view>
