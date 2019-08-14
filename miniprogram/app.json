@@ -13,6 +13,7 @@
     "pages/houseList/houseList",
     "pages/uploadImage/uploadImage",
     "pages/service/service",
+    "pages/register/register",
     "pages/uploadPageSecond/uploadPageSecond",
     "pages/service/cleanImageHistory/cleanImageHistory",
     "pages/houseDetail/MonthProfit/MonthProfit",

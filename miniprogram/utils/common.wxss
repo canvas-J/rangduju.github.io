@@ -1,0 +1,24 @@
+.dis-flex{
+  display: flex;
+}
+.m-top20{
+  margin-top: 20rpx;
+}
+.m-bottom40{
+  margin-bottom: 40rpx;
+}
+.flex-jc{
+  justify-content: space-around;
+}
+.b-f{
+  background-color: #fff;
+}
+.border{
+  border: 1px solid #000;
+}
+.btn{
+  font-size: 36rpx;
+  height: 90rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}

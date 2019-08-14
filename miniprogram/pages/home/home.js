@@ -9,6 +9,10 @@ Page({
     nowTime: '',
     someTime: null,
     list: [{
+      id: 'tenant',
+      name: '我是房客',
+      open: false,
+    },{
         id: 'landlord',
         name: '我是房东',
         open: false,
@@ -46,6 +50,11 @@ Page({
       console.log(id)
       wx.navigateTo({
         url: '../management/management' //管理员页面跳转
+      })
+    } else if (id === "tenant") {
+      console.log(id)
+      wx.navigateTo({
+        url: '../tenant/tenant' //房客页面跳转
       })
     } else if (id === "landlord") {
       console.log(id)

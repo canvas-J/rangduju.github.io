@@ -4,9 +4,9 @@
 <view class="weui-cells__title" style="text-align:center"> 请添加保洁前照片 </view>
 
 <block wx:for="{{positions}}" wx:for-index="id" wx:key="*this">
-<view class="button-sp-area">
-  <button class="weui-btn" type="primary" bindtap="chooseImageID" data-idx="{{id}}" wx:if="{{uploadRes[id] != true && imgChoose[id] != true}}">添加{{item}}的图片</button>
-  <button class="weui-btn" style='background-color:{{color}}' data-idx="{{id}}" wx:if="{{uploadRes[id] != true && imgChoose[id] == true}}">添加{{item}}的图片</button>
+  <view class="button-sp-area">
+    <button class="weui-btn" type="primary" bindtap="chooseImageID" data-idx="{{id}}" wx:if="{{uploadRes[id] != true && imgChoose[id] != true}}">添加{{item}}的图片</button>
+    <button class="weui-btn" style='background-color:{{color}}' data-idx="{{id}}" wx:if="{{uploadRes[id] != true && imgChoose[id] == true}}">添加{{item}}的图片</button>
   </view>
 
   <view class="question-images">
@@ -20,10 +20,10 @@
   </view>
   <!-- 提交按钮  -->
   <view class="button-sp-area">
-  <button class="weui-btn" style='background-color:{{color}}' wx:if="{{uploadRes[id] != true && loading[id] == true}}">上传中...</button>
-  <button class="weui-btn" style='background-color:{{color}}' wx:if="{{uploadRes[id] == true && loading[id] == true}}">{{item}}的图片上传成功！</button>
-  <button class="weui-btn" type="primary" bindtap="doUploadID" data-idx="{{id}}" wx:if="{{uploadRes[id] != true && loading[id] != true}}">上传</button>
-    </view>
+    <button class="weui-btn" style='background-color:{{color}}' wx:if="{{uploadRes[id] != true && loading[id] == true}}">上传中...</button>
+    <button class="weui-btn" style='background-color:{{color}}' wx:if="{{uploadRes[id] == true && loading[id] == true}}">{{item}}的图片上传成功！</button>
+    <button class="weui-btn" type="primary" bindtap="doUploadID" data-idx="{{id}}" wx:if="{{uploadRes[id] != true && loading[id] != true}}">上传</button>
+  </view>
 
   <view class="weui-loadmore weui-loadmore_line" wx:if="{{id != positions.length-1}}">
     <view class="weui-loadmore__tips weui-loadmore__tips_in-line"></view>
@@ -31,5 +31,5 @@
 </block>
 <view class="button-sp-area">
 
-<button class="weui-btn" type="primary" bindtap="uploadPageSecond">下一步</button>
+  <button class="weui-btn" type="primary" bindtap="uploadPageSecond">下一步</button>
 </view>
