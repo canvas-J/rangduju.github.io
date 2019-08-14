@@ -189,7 +189,7 @@ Page({
         return
       }
     }
-    db.collection('tenant').add({
+    db.collection('register').add({
       // data 字段表示需新增的 JSON 数据
       data: {
         tenant1:that.data.certificates[0],
