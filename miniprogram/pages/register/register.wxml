@@ -6,7 +6,7 @@
         <text class='register_title'>姓名：</text>
         <input class='b-f' bindinput="getInputValue" placeholder="请输入姓名" data-type="name" data-index='{{index}}'></input>
       </view>
-      <view class='dis-flex register_item'>
+      <view class='weui-flex register_item'>
         <text class='register_title'>证件类型：</text>
         <radio-group class="weui-flex flex-jc" bindchange="radioChange" data-index='{{index}}' data-type="radio">
           <label>
@@ -22,11 +22,12 @@
         <input class='b-f' bindinput="getInputValue" data-type="number" data-index='{{index}}' placeholder="{{item.certificates_type==1?'请输入身份证号':'Please enter your passport number.'}}"></input>
       </view>
       <view class="weui-flex m-top20">
-        <block wx:for='{{item.image_arr}}' wx:key='{{index}}' wx:for-item='itemz' wx:for-index='indexz'>
-          <image class="card" src="{{itemz}}" mode="aspectFill" bindtap="photograph" data-index="{{index}}" data-indexz="{{indexz}}"></image>
-        </block>
+        <!-- <block wx:for='{{item.image_arr}}' wx:key='{{index}}' wx:for-item='itemz' wx:for-index='indexz'> -->
+          <image class="card" src="{{item.image_arr[0]?item.image_arr[0]:'/pages/images/just.png'}}" mode="aspectFill" bindtap="photograph" data-index="{{index}}" data-indexz="0"></image>
+          <image class="card" src="{{item.image_arr[1]?item.image_arr[1]:'/pages/images/back.png'}}" mode="aspectFill" bindtap="photograph" data-index="{{index}}" data-indexz="1"></image>
+        <!-- </block> -->
       </view>
-      <view>{{item.certificates_type==1?'请上传身份证正反面':'Please upload the passport home page and visa page.'}}</view>
+      <view class="text-center">{{item.certificates_type==1?'请上传身份证正反面':'Please upload the passport data page and visa page.'}}</view>
       <!-- <view class='weui-flex m-top20'>
         <button class="weui-flex__item">拍照上传</button>
       </view> -->
@@ -40,9 +41,11 @@
     <button class="weui-flex__item" bindtap="addUser" wx:if='{{certificates.length<3}}'>添加房客</button>
   </view>
 
-
-  <view class='btn m-bottom40'>
-    <button bindtap="increase">上传</button>
+ <view class='btn m-top20'>
+    <button bindtap="increase">上传证件</button>
+  </view>
+  <view class='btn m-bottom40 border-f'>
+    <button bindtap="submission" disabled='{{disabled}}'>提交</button>
   </view>
 
 </view>

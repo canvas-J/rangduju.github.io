@@ -1,0 +1,6 @@
+<!--pages/reservation/reservation.wxml-->
+
+<view class="margin32 b-f weui-form-preview__item">
+<view class="m-b20 qrcode"><image src="{{qrcode}}" bindtap="previewImg" data-image="{{qrcode}}"></image></view>
+<view class="m-bottom40"><text>请点击图片打开并扫描二维码前往预定</text></view>
+</view>

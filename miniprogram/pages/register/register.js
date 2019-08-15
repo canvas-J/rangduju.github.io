@@ -8,11 +8,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    disabled:true,
     certificates:[
       {
         name:'',
         certificates_type: 1,
-        image_arr: ['/pages/images/rangduju-bg.jpg','/pages/images/rangduju-bg.jpg'],
+        image_arr: [],
         number:''
       }
     ]
@@ -107,28 +108,12 @@ Page({
         success: function (res) {
 
           const filePath = res.tempFilePaths[0];
-          // 上传图片
-          const cloudPath = 'my-image' + filePath.match(/\.[^.]+?$/)[0]
-          wx.cloud.uploadFile({
-            cloudPath,
-            filePath,
-            success: res => {
-              console.log('[上传文件] 成功：', res)
-              wx.cloud.getTempFileURL({
-                //--fileList: 数组元素为需要换取文件路径的id值
-                fileList: [res.fileID],
-                success(res) {
-                  console.log("获取真实路径", res)//返回的是图片下载地址
-                  that.setData({
-                    [temporaryStr]: res.fileList[0].tempFileURL
-                  })
-                }
-              })
-            },
-            fail: e => {
-              console.error('[上传文件] 失败：', e)
-            },
+          that.setData({
+            [temporaryStr]: filePath
           })
+          // 上传图片
+          // const cloudPath = Date.now() + filePath.match(/\.[^.]+?$/)[0]
+          // const cloudPath = filePath.match(/([^/*.]+)\.\w+$/)[0];
 
         },
         fail: e => {
@@ -165,7 +150,7 @@ Page({
     let a = {
       name: '',
       certificates_type: 1,
-      image_arr: ['/pages/images/rangduju-bg.jpg', '/pages/images/rangduju-bg.jpg'],
+      image_arr: [],
       number: ''
     };
     arr.push(a);
@@ -174,12 +159,12 @@ Page({
     })
     console.log(arr)
   },
-  //上传
+  //上传证件照片
   increase(){
-    console.log(that.data.certificates)
+    // console.log(that.data.certificates)
     let information=that.data.certificates;
     for (let i = 0; i <information.length;i++){
-      if (information[i].name == '' && information[i].number ==''){
+      if (information[i].name == '' || information[i].number ==''){
         console.log(12);
         wx.showToast({
           title: '请您把信息填写完整！',
@@ -187,20 +172,83 @@ Page({
           duration: 2000
         })
         return
+      } else if (information[i].image_arr[0] == undefined || information[i].image_arr[1] == undefined){
+        wx.showToast({
+          title: '请您选择证件照片！',
+          icon: 'none',
+          duration: 2000
+        })
+        return
       }
     }
+    for (let i = 0; i < information.length; i++) {
+      console.log(information[i].image_arr.length);
+      for (let j = 0; j < information[i].image_arr.length; j++) {
+        let filePath = that.data.certificates[i].image_arr[j];
+        let temporaryStr = 'certificates[' + i + '].image_arr[' + j + ']';
+        const cloudPath = Date.now() + filePath.match(/\.[^.]+?$/)[0];
+        wx.cloud.uploadFile({
+          cloudPath,
+          filePath,
+          success: res => {
+            console.log('[上传文件] 成功：', res)
+            wx.cloud.getTempFileURL({
+              //--fileList: 数组元素为需要换取文件路径的id值
+              fileList: [res.fileID],
+              success(res) {
+                console.log("获取真实路径", res)//返回的是图片下载地址
+                that.setData({
+                  [temporaryStr]: res.fileList[0].tempFileURL
+                })
+              }
+            })
+          },
+          fail: e => {
+            console.error('[上传文件] 失败：', e)
+          },
+        })
+      }
+    }
+    console.log(that.data.certificates,132);
+    that.setData({
+      disabled:false
+    })
+  },
+  //提交信息
+  submission(){
     db.collection('register').add({
       // data 字段表示需新增的 JSON 数据
       data: {
-        tenant1:that.data.certificates[0],
+        tenant1: that.data.certificates[0],
         tenant2: that.data.certificates[1],
         tenant3: that.data.certificates[2]
       }
     })
       .then(res => {
         console.log(res)
+        if (res.errMsg == 'collection.add:ok') {
+          wx.showToast({
+            title: '上传成功',
+            icon: 'success',
+            duration: 2000
+          })
+          //返回上一级菜单
+          setTimeout(function () {
+            wx.navigateBack({
+              delta: 1
+            })
+          }, 2000)
+        }
       })
-      .catch(console.error)
+      .catch(err => {
+        console.error(err)
+        wx.showToast({
+          title: err,
+          icon: 'none',
+          duration: 2000
+        })
+      })
   }
+
   
 })

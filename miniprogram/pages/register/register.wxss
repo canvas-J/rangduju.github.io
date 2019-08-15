@@ -1,5 +1,4 @@
 /* pages/register/register.wxss */
-@import '/utils/common.wxss';
 .household{
   padding-bottom: 20rpx;
   border-bottom:1.1px solid #bbf; 
@@ -39,4 +38,7 @@
 }
 .btn{
   margin-top: 20rpx;
+}
+.border-f{
+  border: 2px solid #fff;
 }

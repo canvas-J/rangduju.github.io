@@ -13,7 +13,7 @@
 
     <!-- 图片缩略图  -->
     <image class="q-image" src="{{images[id]}}" mode="aspectFill" data-idx="{{id}}" bindtap="handleImagePreviewID" wx:if="{{imgChoose[id] == true}}"></image>
-    <image class="q-image" src="../images/{{item}}.png" mode="aspectFill" wx:if="{{imgChoose[id] != true}}"></image>
+    <image class="q-image" src="../images/{{item}}.jpg" mode="aspectFill" wx:if="{{imgChoose[id] != true}}"></image>
     <!-- 移除图片的按钮  -->
     <!-- <view class="q-image-remover" bindtap="removeImageID" data-idx="{{id}}" wx:if="{{uploadRes[id] != true && imgChoose[id] == true }}">删除</view> -->
     <button class="weui-btn mini-btn" type="warn" size="mini" bindtap="removeImageID" data-idx="{{id}}" wx:if="{{uploadRes[id] != true && imgChoose[id] == true }}">删除</button>

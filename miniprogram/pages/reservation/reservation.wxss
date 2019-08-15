@@ -1,0 +1,13 @@
+/* pages/reservation/reservation.wxss */
+.margin32{
+  margin: 32rpx;
+  text-align: center;
+  border-radius:20rpx; 
+}
+.qrcode image{
+  width: 380rpx;
+  height: 380rpx;
+}
+.m-b20{
+  margin:20rpx 0;
+}
