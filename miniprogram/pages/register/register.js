@@ -8,22 +8,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    disabled:true,
-    certificates:[
-      {
-        name:'',
-        certificates_type: 1,
-        image_arr: [],
-        number:''
-      }
-    ]
+    disabled: true,
+    certificates: [{
+      name: '',
+      certificates_type: 1,
+      image_arr: [],
+      image_id: [],
+      number: ''
+    }]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    that=this;
+  onLoad: function(options) {
+    that = this;
   },
   //取值
   getValue(e) {
@@ -45,94 +44,137 @@ Page({
       [str]: value
     })
   },
-  getInputValue(e){
+  getInputValue(e) {
+    that.getValue(e);
+  },
+  //单选框事件
+  radioChange(e) {
     that.getValue(e);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
-  photograph(e){
-    let index=e.currentTarget.dataset.index;
+  photograph(e) {
+    let index = e.currentTarget.dataset.index;
     let indexz = e.currentTarget.dataset.indexz;
     let temporaryStr = 'certificates[' + index + '].image_arr[' + indexz + ']';
-      // 选择图片
-      wx.chooseImage({
-        count: 1,
-        sizeType: ['compressed'],
-        sourceType: ['album', 'camera'],
-        success: function (res) {
-
-          const filePath = res.tempFilePaths[0];
-          that.setData({
-            [temporaryStr]: filePath
-          })
-          // 上传图片
-          // const cloudPath = Date.now() + filePath.match(/\.[^.]+?$/)[0]
-          // const cloudPath = filePath.match(/([^/*.]+)\.\w+$/)[0];
-
-        },
-        fail: e => {
-          console.error(e)
-        }
+    let temporaryIdStr = 'certificates[' + index + '].image_id[' + indexz + ']';
+    let imageId = that.data.certificates[index].image_id[indexz];
+    //删除云存储中的图片
+    if (imageId != undefined) {
+      wx.cloud.deleteFile({
+        fileList: [imageId]
+      }).then(res => {
+        // handle success
+        console.log(res.fileList)
+      }).catch(error => {
+        // handle error
       })
+    }
+    // 选择图片
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['compressed'],
+      sourceType: ['album', 'camera'],
+      success: function(res) {
+
+        const filePath = res.tempFilePaths[0];
+        that.setData({
+          [temporaryStr]: filePath
+        })
+        // 上传图片
+        const cloudPath = Date.now() + filePath.match(/\.[^.]+?$/)[0]
+        // const cloudPath = filePath.match(/([^/*.]+)\.\w+$/)[0];
+        wx.cloud.uploadFile({
+          cloudPath,
+          filePath,
+          success: res => {
+            console.log('[上传文件] 成功：', res)
+            that.setData({
+              [temporaryIdStr]: res.fileID
+            })
+
+          },
+          fail: e => {
+            console.error('[上传文件] 失败：', e)
+          },
+        })
+
+
+      },
+      fail: e => {
+        console.error(e)
+      }
+    })
+    console.log(that.data.certificates, 133);
   },
-  //单选框事件
-  radioChange(e) {
-    that.getValue(e);    
-  },
+
   //删除房客
-  deletUser(){
-    let arr=this.data.certificates;
+  deletUser() {
+    let arr = that.data.certificates;
     wx.showModal({
       title: '提示',
       content: '您确定删除该房客？',
       success(res) {
         if (res.confirm) {
+          for (let i = 0; i < 2; i++) {
+            let imageId = arr[arr.length - 1].image_id[i]
+            if (imageId != undefined) {
+              wx.cloud.deleteFile({
+                fileList: [imageId]
+              }).then(res => {
+                // handle success
+                console.log(res.fileList)
+              }).catch(error => {
+                // handle error
+              })
+            }
+          }
           arr.splice(-1, 1);
           that.setData({
             certificates: arr
@@ -142,37 +184,36 @@ Page({
         }
       }
     })
-    
+
   },
   //添加房客
-  addUser(){
+  addUser() {
     let arr = this.data.certificates;
     let a = {
       name: '',
       certificates_type: 1,
       image_arr: [],
+      image_id: [],
       number: ''
     };
     arr.push(a);
     this.setData({
       certificates: arr
     })
-    console.log(arr)
   },
-  //上传证件照片
-  increase(){
+  //提交信息
+  increase() {
     // console.log(that.data.certificates)
-    let information=that.data.certificates;
-    for (let i = 0; i <information.length;i++){
-      if (information[i].name == '' || information[i].number ==''){
-        console.log(12);
+    let information = that.data.certificates;
+    for (let i = 0; i < information.length; i++) {
+      if (information[i].name == '' || information[i].number == '') {
         wx.showToast({
           title: '请您把信息填写完整！',
           icon: 'none',
           duration: 2000
         })
         return
-      } else if (information[i].image_arr[0] == undefined || information[i].image_arr[1] == undefined){
+      } else if (information[i].image_arr[0] == undefined || information[i].image_arr[1] == undefined) {
         wx.showToast({
           title: '请您选择证件照片！',
           icon: 'none',
@@ -181,49 +222,14 @@ Page({
         return
       }
     }
-    for (let i = 0; i < information.length; i++) {
-      console.log(information[i].image_arr.length);
-      for (let j = 0; j < information[i].image_arr.length; j++) {
-        let filePath = that.data.certificates[i].image_arr[j];
-        let temporaryStr = 'certificates[' + i + '].image_arr[' + j + ']';
-        const cloudPath = Date.now() + filePath.match(/\.[^.]+?$/)[0];
-        wx.cloud.uploadFile({
-          cloudPath,
-          filePath,
-          success: res => {
-            console.log('[上传文件] 成功：', res)
-            wx.cloud.getTempFileURL({
-              //--fileList: 数组元素为需要换取文件路径的id值
-              fileList: [res.fileID],
-              success(res) {
-                console.log("获取真实路径", res)//返回的是图片下载地址
-                that.setData({
-                  [temporaryStr]: res.fileList[0].tempFileURL
-                })
-              }
-            })
-          },
-          fail: e => {
-            console.error('[上传文件] 失败：', e)
-          },
-        })
-      }
-    }
-    console.log(that.data.certificates,132);
-    that.setData({
-      disabled:false
-    })
-  },
-  //提交信息
-  submission(){
     db.collection('register').add({
-      // data 字段表示需新增的 JSON 数据
-      data: {
-        tenant1: that.data.certificates[0],
-        tenant2: that.data.certificates[1],
-        tenant3: that.data.certificates[2]
-      }
-    })
+        // data 字段表示需新增的 JSON 数据
+        data: {
+          tenant1: that.data.certificates[0],
+          tenant2: that.data.certificates[1],
+          tenant3: that.data.certificates[2]
+        }
+      })
       .then(res => {
         console.log(res)
         if (res.errMsg == 'collection.add:ok') {
@@ -233,7 +239,7 @@ Page({
             duration: 2000
           })
           //返回上一级菜单
-          setTimeout(function () {
+          setTimeout(function() {
             wx.navigateBack({
               delta: 1
             })
@@ -248,7 +254,8 @@ Page({
           duration: 2000
         })
       })
+
   }
 
-  
+
 })

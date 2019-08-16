@@ -24,10 +24,10 @@
             <view class="weui-flex__item">{{item.name}}</view>
             <image class="kind-list__img" src="../images/icon_nav_{{item.id}}.png"></image>
           </view>
-
         </view>
       </block>
     </view>
+    
   </view>
   <view class="page__ft">
     <view class="weui-footer__text" style="color:#A9A9A9">Copyright © 2019 让渡居</view>

@@ -1,5 +1,5 @@
 <!--pages/register/register.wxml-->
-<view class='register'>
+<view class='register weui-form-preview__item'>
   <view>
     <view class="household" wx:for='{{certificates}}' wx:key='index'>
       <view class='weui-flex register_item'>
@@ -23,8 +23,8 @@
       </view>
       <view class="weui-flex m-top20">
         <!-- <block wx:for='{{item.image_arr}}' wx:key='{{index}}' wx:for-item='itemz' wx:for-index='indexz'> -->
-          <image class="card" src="{{item.image_arr[0]?item.image_arr[0]:'/pages/images/just.png'}}" mode="aspectFill" bindtap="photograph" data-index="{{index}}" data-indexz="0"></image>
-          <image class="card" src="{{item.image_arr[1]?item.image_arr[1]:'/pages/images/back.png'}}" mode="aspectFill" bindtap="photograph" data-index="{{index}}" data-indexz="1"></image>
+        <image class="card" src="{{item.image_arr[0]?item.image_arr[0]:'/pages/images/just.png'}}" mode="aspectFill" bindtap="photograph" data-index="{{index}}" data-indexz="0"></image>
+        <image class="card" src="{{item.image_arr[1]?item.image_arr[1]:'/pages/images/back.png'}}" mode="aspectFill" bindtap="photograph" data-index="{{index}}" data-indexz="1"></image>
         <!-- </block> -->
       </view>
       <view class="text-center">{{item.certificates_type==1?'请上传身份证正反面':'Please upload the passport data page and visa page.'}}</view>
@@ -41,11 +41,8 @@
     <button class="weui-flex__item" bindtap="addUser" wx:if='{{certificates.length<3}}'>添加房客</button>
   </view>
 
- <view class='btn m-top20'>
-    <button bindtap="increase">上传证件</button>
-  </view>
-  <view class='btn m-bottom40 border-f'>
-    <button bindtap="submission" disabled='{{disabled}}'>提交</button>
+  <view class='btn m-bottom40 m-top20'>
+    <button bindtap="increase">提交</button>
   </view>
 
 </view>

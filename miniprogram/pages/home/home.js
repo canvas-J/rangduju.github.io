@@ -29,12 +29,12 @@ Page({
         name: '我是保洁方',
         open: false,
       },
-      {
-        id: 'management',
-        name: '我是管理员',
-        open: false,
+      // {
+      //   id: 'management',
+      //   name: '我是管理员',
+      //   open: false,
 
-      },
+      // },
       // {
       //   id: 'contact',
       //   name: '我是管理员',
@@ -46,12 +46,13 @@ Page({
     var id = e.currentTarget.id
     console.log(id)
 
-    if (id === "management") {
-      console.log(id)
-      wx.navigateTo({
-        url: '../management/management' //管理员页面跳转
-      })
-    } else if (id === "tenant") {
+    // if (id === "management") {
+    //   console.log(id)
+    //   wx.navigateTo({
+    //     url: '../management/management' //管理员页面跳转
+    //   })
+    // } else 
+    if (id === "tenant") {
       console.log(id)
       wx.navigateTo({
         url: '../tenant/tenant' //房客页面跳转
@@ -67,6 +68,7 @@ Page({
         url: '../service/service' //保洁房页面跳转
       })
     }
-  },
+  }
+  
 });
 
