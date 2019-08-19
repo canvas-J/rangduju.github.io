@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    qrcode: ['https://7261-rangduju-test-8i0oe-1259621310.tcb.qcloud.la/qrcode.png?sign=f4ddf526529324a1057b18c09ad349e7&t=1565861232']
+    qrcode: []
   },
 
   /**
@@ -16,6 +16,19 @@ Page({
    */
   onLoad: function (options) {
     that=this;
+    wx.cloud.downloadFile({
+      fileID: 'cloud://rangduju-test-8i0oe.7261-rangduju-test-8i0oe/qrcode.png'
+    }).then(res => {
+      // get temp file path
+      console.log(res.tempFilePath)
+      let str='qrcode[0]'
+      that.setData({
+        [str]: res.tempFilePath
+      })
+    }).catch(error => {
+      // handle error
+    })
+    
 
   },
 
