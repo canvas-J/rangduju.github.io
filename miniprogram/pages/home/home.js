@@ -68,6 +68,9 @@ Page({
         url: '../service/service' //保洁房页面跳转
       })
     }
+  },
+  ab(){
+    console.log(123)
   }
   
 });

@@ -47,6 +47,7 @@ Page({
   },
 
   toHousePage: function (e) {
+    console.log(e)
     var id = e.currentTarget.id
     app.globalData.curProfitHouse = id
     util.buttonClicked(this)

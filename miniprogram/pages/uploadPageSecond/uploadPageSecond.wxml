@@ -1,11 +1,11 @@
 <!--miniprogram/pages/uploadPageSecond/uploadPageSecond.wxml-->
 <!-- Created by: Liuting Chen -->
-<view class="weui-cells__title"> 请添加保洁后照片 </view>
+<!-- <view class="weui-cells__title cleaning_title"> 请添加保洁后照片 </view> -->
 
 <block wx:for="{{positions}}" wx:for-index="id" wx:key="*this">
   <view class="button-sp-area">
-    <button class="weui-btn" type="primary" bindtap="chooseImageID" data-idx="{{id}}" wx:if="{{uploadRes[id] != true && imgChoose[id] != true}}">添加{{item}}的图片</button>
-    <button class="weui-btn" style='background-color:{{color}}' data-idx="{{id}}" wx:if="{{uploadRes[id] != true && imgChoose[id] == true}}">添加{{item}}的图片</button>
+    <button class="weui-btn white-s" type="primary" bindtap="chooseImageID" data-idx="{{id}}" wx:if="{{uploadRes[id] != true && imgChoose[id] != true}}">添加保洁后{{item}}的图片</button>
+    <button class="weui-btn white-s" style='background-color:{{color}}' data-idx="{{id}}" wx:if="{{uploadRes[id] != true && imgChoose[id] == true}}">添加保洁后{{item}}的图片</button>
   </view>
   <view class="question-images">
     <!-- 图片缩略图  -->

@@ -22,3 +22,10 @@
   background-color: #fff;
   border-radius: 10rpx;
 }
+.cleaning_title{
+  text-align: center;
+  font-size: 36rpx;
+}
+.white-s{
+  white-space: nowrap
+}

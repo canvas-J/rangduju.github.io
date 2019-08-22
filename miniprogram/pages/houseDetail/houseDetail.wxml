@@ -16,12 +16,12 @@
 
   </view>
   <view class="page__bd">
-    <view wx:for="{{monthly_coop_days_2019}}" wx:for-index="id">
+    <view wx:for="{{monthly_coop_days_2019}}" wx:for-index="id" wx:key='index'>
       <view wx:if="{{reservation_days_2019[id] != 0}}" class="weui-form-preview">
         <view class="weui-form-preview__hd">
           <view class="weui-form-preview__item">
             <view class="weui-form-preview__label">{{id}}月</view>
-             <view class="weui-form-preview__value_in-hd" wx:if="{{monthly_time_stamp_2019_show[id] == true}}"> 
+            <view class="weui-form-preview__value_in-hd" wx:if="{{monthly_time_stamp_2019_show[id] == true}}">
               <button class="weui-btn mini-btn" type="default" data-idx="{{id}}" size="mini" bindtap="toMonthProfit">点击查看当月收益</button>
             </view>
           </view>

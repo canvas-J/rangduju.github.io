@@ -1,0 +1,9 @@
+{
+  "triggers": [
+    {
+      "name": "backups",
+      "type": "timer",
+      "config": "0 */1 * * * * *"
+    }
+  ]
+}

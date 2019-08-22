@@ -24,6 +24,9 @@
       <view class="weui-flex m-top20">
         <!-- <block wx:for='{{item.image_arr}}' wx:key='{{index}}' wx:for-item='itemz' wx:for-index='indexz'> -->
         <image class="card" src="{{item.image_arr[0]?item.image_arr[0]:'/pages/images/just.png'}}" mode="aspectFill" bindtap="photograph" data-index="{{index}}" data-indexz="0"></image>
+        <view class="point">
+          <text>=></text>
+        </view>
         <image class="card" src="{{item.image_arr[1]?item.image_arr[1]:'/pages/images/back.png'}}" mode="aspectFill" bindtap="photograph" data-index="{{index}}" data-indexz="1"></image>
         <!-- </block> -->
       </view>
@@ -46,3 +49,4 @@
   </view>
 
 </view>
+

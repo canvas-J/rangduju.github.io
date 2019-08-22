@@ -3,8 +3,8 @@
 // 每一个房源对应的收益展示，每月最后一天中午12点显示该月收益详情按键
 
 var wxCharts = require('../../utils/wxcharts.js');
-var app = getApp()
-const db = wx.cloud.database()
+var app = getApp();
+const db = wx.cloud.database();
 var monthly_time_stamp_2019 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 var monthly_time_stamp_2019_show = [false, false, false, false, false, false, false, false, false, false, false, false, false]
 

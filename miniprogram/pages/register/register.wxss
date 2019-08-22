@@ -11,11 +11,14 @@
   font-size: 32rpx;
 }
 .card{
-  height: 200rpx;
+  height: 210rpx;
   border-radius: 20rpx;
 }
 .card:nth-child(1){
-  margin-right: 10rpx;
+  margin-right: 5rpx;
+}
+.card:nth-child(3){
+  margin-left: 5rpx;
 }
 .weui-flex__item{
   background-color: #fff;
@@ -41,4 +44,7 @@
 }
 .border-f{
   border: 2px solid #fff;
+}
+.point{
+  line-height: 210rpx;
 }
