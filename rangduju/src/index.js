@@ -1,12 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import Head from './subassembly/head';
+import "./common/common.css";
+// import App from './App';
+import Head from './components/head';
+
+// import Cooperation from './subassembly/cooperation';
+// import About from './components/about';
+import Doubt from './components/doubt';
+
+
+import Foot from './components/foot';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Head />, document.getElementById('head'));
-ReactDOM.render(<App />, document.getElementById('root'));
+
+// ReactDOM.render(<App />, document.getElementById('root'));
+// ReactDOM.render(<Cooperation />, document.getElementById('root'));
+// ReactDOM.render(<About />, document.getElementById('root'));
+ReactDOM.render(<Doubt />, document.getElementById('root'));
+
+
+ReactDOM.render(<Foot />, document.getElementById('foot'));
+
 
 
 // If you want your app to work offline and load faster, you can change
