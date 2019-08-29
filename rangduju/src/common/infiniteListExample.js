@@ -1,142 +1,77 @@
 import React from 'react';
-import { List, message, Avatar, Spin } from 'antd';
-// import reqwest from 'reqwest';
+import Scrollbars from 'react-custom-scrollbars';
 
-// import InfiniteScroll from 'react-infinite-scroller';
-
-// const fakeDataUrl = 'https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo';
 
 class InfiniteListExample extends React.Component {
-  state = {
-    data: [{
-        "gender": "male",
-        "name": {
-            "title": "mr",
-            "first": "luukas",
-            "last": "marttila"
-        },
-        "email": "luukas.marttila@example.com",
-        "nat": "FI"
-    },
-    {
-        "gender": "male",
-        "name": {
-            "title": "mr",
-            "first": "victor",
-            "last": "rubio"
-        },
-        "email": "victor.rubio@example.com",
-        "nat": "ES"
-    },
-    {
-        "gender": "female",
-        "name": {
-            "title": "miss",
-            "first": "maeva",
-            "last": "wilson"
-        },
-        "email": "maeva.wilson@example.com",
-        "nat": "CA"
-    },{
-      "gender": "female",
-      "name": {
-          "title": "miss",
-          "first": "maeva",
-          "last": "wilson"
-      },
-      "email": "maeva.wilson@example.com",
-      "nat": "CA"
-  },{
-    "gender": "female",
-    "name": {
-        "title": "miss",
-        "first": "maeva",
-        "last": "wilson"
-    },
-    "email": "maeva.wilson@example.com",
-    "nat": "CA"
-}],
-    loading: false,
-    hasMore: true,
-  };
-
-//   componentDidMount() {
-//     this.fetchData(res => {
-//       this.setState({
-//         data: res.results,
-//       });
-//     });
-//   }
-
-//   fetchData = callback => {
-//     reqwest({
-//       url: fakeDataUrl,
-//       type: 'json',
-//       method: 'get',
-//       contentType: 'application/json',
-//       success: res => {
-//         callback(res);
-//       },
-//     });
-//   };
-
-  handleInfiniteOnLoad = () => {
-    let { data } = this.state;
-    this.setState({
-      loading: true,
-    });
-    if (data.length > 14) {
-      message.warning('Infinite List loaded all');
-      this.setState({
-        hasMore: false,
-        loading: false,
-      });
-      return;
-    }
-    this.fetchData(res => {
-      data = data.concat(res.results);
-      this.setState({
-        data,
-        loading: false,
-      });
-    });
-  };
-
-  render() {
+  renderThumb({ style, ...props }) {//设置滚动条的样式
+    const thumbStyle = {
+        width: '8px',
+        backgroundColor: '#000000',
+        opacity: '0.2',
+        borderRadius: '6px',
+        right: '4px',
+    };
     return (
-      <div className="demo-infinite-container">
-        {/* <InfiniteScroll
-          initialLoad={false}
-          pageStart={0}
-          loadMore={this.handleInfiniteOnLoad}
-          hasMore={!this.state.loading && this.state.hasMore}
-          useWindow={false}
-        > */}
-          <List
-            dataSource={this.state.data}
-            renderItem={item => (
-              <List.Item key={item.id}>
-                <List.Item.Meta
-                  avatar={
-                    <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                  }
-                  title={<a href="https://ant.design">{item.name.last}</a>}
-                  description={item.email}
-                />
-                <div>Content</div>
-              </List.Item>
-            )}
-          >
-            {this.state.loading && this.state.hasMore && (
-              <div className="demo-loading-container">
-                <Spin />
-              </div>
-            )}
-          </List>
-        {/* </InfiniteScroll> */}
-      </div>
+        <div
+        style={{ ...style, ...thumbStyle }}
+        {...props}/>
     );
-  }
+}
+render() {
+    return (
+      // <div>
+      // <img src={require('../images/zhezhao.png')}></img> 
+      <Scrollbars 
+            style={{ height: 234}}//这里给个足够高的高度就好
+            renderThumbVertical={this.renderThumb}//传入函数，设置滚动条样式
+            // autoHide
+            >
+            <ul className="infiniteListExample">
+              <li>
+                <div>
+                  <p className="title">
+                    <img src={require("../images/tu5.png")} alt="头像"></img>启蒙
+                  </p>
+                  <p className="text">
+                  房子非常干净漂亮~有梳妆台饭桌等等,虽然离地铁站不算太近,但是去故宫天坛颐和园这种常规景点一个小时之类就可以到｡地铁站旁边有购物商场麦当劳和必胜客,情侣闺蜜的最佳选择!楼下有水网便利店火锅店,买东西也很方便!之前因为有事更改了日期,房东立刻就和我沟通更改了预定日期,房东非常耐心好沟通呀!电视可以选电影看非常nice和男朋友度过了非常开心的六天!
+                  </p>
+                  <p className="time">
+                    2019年7月
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <p className="title">
+                    <img src={require("../images/tu5.png")} alt="头像"></img>阔增
+                  </p>
+                  <p className="text">
+                  房子位置和装修都很好，性价比很高，强烈推荐。
+                  </p>
+                  <p className="time">
+                    2019年7月
+                  </p>
+                </div>
+                </li>
+              <li>
+              <div>
+                  <p className="title">
+                    <img src={require("../images/tu5.png")} alt="头像"></img>启蒙
+                  </p>
+                  <p className="text">
+                  房子非常干净漂亮~有梳妆台饭桌等等,虽然离地铁站不算太近,但是去故宫天坛颐和园这种常规景点一个小时之类就可以到｡地铁站旁边有购物商场麦当劳和必胜客,情侣闺蜜的最佳选择!楼下有水网便利店火锅店,买东西也很方便!之前因为有事更改了日期,房东立刻就和我沟通更改了预定日期,房东非常耐心好沟通呀!电视可以选电影看非常nice和男朋友度过了非常开心的六天!
+                  </p>
+                  <p className="time">
+                    2019年7月
+                  </p>
+                </div>
+              </li>
+             
+            </ul>
+        </Scrollbars>
+        // </div>
+    );
+}
 }
 
 export default InfiniteListExample;

@@ -406,3 +406,25 @@ a{
     padding-top: 3.75rem;
     padding-bottom: 6.125rem;
 }
+.first .infiniteListExample .title{
+    font-size: 1rem;
+    font-weight: 400;
+    /* margin-bottom: -2.375rem; */
+}
+.first .infiniteListExample .title > img{
+    width: 4%;
+    /* height: 2.6875rem; */
+    margin-right: 2%;
+    height: auto;
+    border-radius: 100%;
+
+}
+.first .infiniteListExample .text{
+    padding-left: 6%;
+}
+.first .infiniteListExample .time{
+    text-align: right;
+}
+.first .infiniteListExample > li{ padding-left:0!important;margin:0!important;list-style:none}
+.first .infiniteListExample{padding-right: 1rem;}
+

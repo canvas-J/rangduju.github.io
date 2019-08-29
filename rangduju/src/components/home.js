@@ -11,7 +11,7 @@ class Home extends React.Component{
     render(){
         return(
             <div className="first">
-                <Top />
+                {/* <Top /> */}
                 <Opportunity />
                 <Operate />
                 <DataAnalysis />
