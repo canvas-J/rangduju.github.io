@@ -37,7 +37,25 @@ class InfiniteListExample extends React.Component {
         },
         "email": "maeva.wilson@example.com",
         "nat": "CA"
-    }],
+    },{
+      "gender": "female",
+      "name": {
+          "title": "miss",
+          "first": "maeva",
+          "last": "wilson"
+      },
+      "email": "maeva.wilson@example.com",
+      "nat": "CA"
+  },{
+    "gender": "female",
+    "name": {
+        "title": "miss",
+        "first": "maeva",
+        "last": "wilson"
+    },
+    "email": "maeva.wilson@example.com",
+    "nat": "CA"
+}],
     loading: false,
     hasMore: true,
   };

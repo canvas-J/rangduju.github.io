@@ -1,6 +1,9 @@
 import React from 'react';
 import InfiniteListExample from '../common/infiniteListExample';
 import DataAnalysis from './dataAnalysis';
+import Operate from './operate'
+import Opportunity from './opportunity';
+import Top from './top';
 
 
 
@@ -8,16 +11,16 @@ class Home extends React.Component{
     render(){
         return(
             <div className="first">
-                <div></div>
-                <div></div>
-                <div></div>
+                <Top />
+                <Opportunity />
+                <Operate />
                 <DataAnalysis />
-                <div className="evaluate">
+                <div className="evaluate distance">
                     <p>用户评价</p>
                     <InfiniteListExample />
                 </div>
                 <div className="dis-flex work">
-                    <div>
+                    <div className="work_gif">
                         <img src={require("../images/foot.gif")} className="work_img" alt="工作中"></img>
                     </div>
                     <div className="work_text">

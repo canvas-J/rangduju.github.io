@@ -15,7 +15,7 @@ class Foot extends React.Component {
                     <label className="label_frist">加入我们</label>
                     <label>
                         <a href="https://www.lagou.com/gongsi/580231.html" rel="noopener noreferrer" target="_blank">
-                        拉钩
+                        拉勾
                         </a>
                         </label>
                     <label>
