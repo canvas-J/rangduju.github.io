@@ -4,22 +4,12 @@ import './index.css';
 import "./common/common.css";
 // import App from './App';
 import Head from './components/head';
-
-// import Cooperation from './subassembly/cooperation';
-// import About from './components/about';
-import Doubt from './components/doubt';
-
-
 import Foot from './components/foot';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Head />, document.getElementById('head'));
 
 // ReactDOM.render(<App />, document.getElementById('root'));
-// ReactDOM.render(<Cooperation />, document.getElementById('root'));
-// ReactDOM.render(<About />, document.getElementById('root'));
-ReactDOM.render(<Doubt />, document.getElementById('root'));
-
 
 ReactDOM.render(<Foot />, document.getElementById('foot'));
 

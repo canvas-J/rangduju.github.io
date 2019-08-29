@@ -1,43 +1,64 @@
 import React from 'react';
 import { Menu} from 'antd';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
-
+import Home from './home';
+import Cooperation from './cooperation';
+import About from './about';
+import Doubt from './doubt';
 
 // const { SubMenu } = Menu;
 
 class Head extends React.Component {
   state = {
-    current: 'doubt',
+    current: 'home',
   };
-
+  
   handleClick = e => {
     console.log('click ', e);
     this.setState({
       current: e.key,
     });
   };
+  
+  cscrollToAnchor = (anchorName) => {
+    if (anchorName) {
+        // 找到锚点
+        let anchorElement = document.getElementById(anchorName.key);
+        // 如果对应id的锚点存在，就跳转到锚点
+        if(anchorElement) { anchorElement.scrollIntoView({block: 'start', behavior: 'smooth'}); }
+    }
+  }
 
   render() {
     return (
+      <Router>
+      <div>
       <div className="head distance">
       <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
-        <Menu.Item key="home" className="home">
-          <img src={require("../images/logo.png")} alt="返回首页"></img>
+        <Menu.Item key="home"  className="home">
+          <Link to="/"><img src={require("../images/logo.png")} alt="返回首页"></img></Link>
         </Menu.Item>
         <Menu.Item key="doubt">
-          常见疑惑
+          <Link to="/doubt">常见疑惑</Link>
         </Menu.Item>
         <Menu.Item key="cooperation">
-          如何合作
+          <Link to="/cooperation">如何合作</Link>
         </Menu.Item>
         <Menu.Item key="about">
-          关于我们
+          <Link to="/about">关于我们</Link>
         </Menu.Item>
-        <Menu.Item key="contact">
+        <Menu.Item key="foot" onClick={this.cscrollToAnchor}>
           联系我们
         </Menu.Item>
       </Menu>
       </div>
+      <Route exact path="/" component={Home}></Route>
+      <Route exact path="/doubt" component={Doubt}></Route>
+      <Route exact path="/cooperation" component={Cooperation}></Route>
+      <Route exact path="/about" component={About}></Route>
+      </div>
+      </Router>
     );
   }
 }
