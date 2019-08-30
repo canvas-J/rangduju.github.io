@@ -1,45 +1,29 @@
 import React from 'react';
-import { List, Card } from 'antd';
+import { Input } from 'antd';
 
-const data = [
-    {
-        // img: '',
-        title: '戴尔斯克海外基地',
-    },
-    {
-        // img: '',
-        title: '暖房直租',
-    },
-    {
-        // img: '',
-        title: '艾仕佳科技',
-    },{
-        // img: '',
-        title: '全球房产租售平台',
-    },
-    {
-        // img: '',
-        title: '火河智能门锁',
-    }
-];
+const { Search } = Input;
 
 class Top extends React.Component {
     render() {
         return (
             <div className="top">
-                <div></div>
+                <div className="dis-flex">
+                    <div className="left"><img src={require("../images/top.gif")} alt="动图"></img></div>
+                    <div className="right">
+                        <p className="title">专业的短租解决方案</p>
+                        <p className="label1">我们可以为您的房子赚取高出传统长租最多<strong>40%</strong>的收益方案</p>
+                        <p className="label2">我们将提供从头到尾的一揽子服务</p>
+                        {/* <Search
+                            placeholder="搜索"
+                            enterButton="搜索"
+                            size="large"
+                            onSearch={value => console.log(value)}
+                        /> */}
+                        {/* <p className="label3">看看你错过了多少租金收益</p> */}
+                    </div>
+                </div>
                 <div className="bottom">
-                    <p>我们与谁合作</p>
-                    <List
-                        grid={{ gutter: 16, column: 4 }}
-                        dataSource={data}
-                        renderItem={item => (
-                            <List.Item>
-                                {/* <div><img src={}></img></div> */}
-                                <Card title>{item.title}</Card>
-                            </List.Item>
-                        )}
-                    />,
+                    <img src={require("../images/组10.png")} alt="合作方"></img>
                 </div>
             </div>
         )

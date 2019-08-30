@@ -30,7 +30,7 @@ render() {
               <li>
                 <div>
                   <p className="title">
-                    <img src={require("../images/tu5.png")} alt="头像"></img>启蒙
+                    <img src={require("../images/yonghu1.png")} alt="头像"></img>启蒙
                   </p>
                   <p className="text">
                   房子非常干净漂亮~有梳妆台饭桌等等,虽然离地铁站不算太近,但是去故宫天坛颐和园这种常规景点一个小时之类就可以到｡地铁站旁边有购物商场麦当劳和必胜客,情侣闺蜜的最佳选择!楼下有水网便利店火锅店,买东西也很方便!之前因为有事更改了日期,房东立刻就和我沟通更改了预定日期,房东非常耐心好沟通呀!电视可以选电影看非常nice和男朋友度过了非常开心的六天!
@@ -43,7 +43,7 @@ render() {
               <li>
                 <div>
                   <p className="title">
-                    <img src={require("../images/tu5.png")} alt="头像"></img>阔增
+                    <img src={require("../images/yonghu2.png")} alt="头像"></img>阔增
                   </p>
                   <p className="text">
                   房子位置和装修都很好，性价比很高，强烈推荐。
@@ -56,7 +56,7 @@ render() {
               <li>
               <div>
                   <p className="title">
-                    <img src={require("../images/tu5.png")} alt="头像"></img>启蒙
+                    <img src={require("../images/yonghu3.png")} alt="头像"></img>启蒙
                   </p>
                   <p className="text">
                   房子非常干净漂亮~有梳妆台饭桌等等,虽然离地铁站不算太近,但是去故宫天坛颐和园这种常规景点一个小时之类就可以到｡地铁站旁边有购物商场麦当劳和必胜客,情侣闺蜜的最佳选择!楼下有水网便利店火锅店,买东西也很方便!之前因为有事更改了日期,房东立刻就和我沟通更改了预定日期,房东非常耐心好沟通呀!电视可以选电影看非常nice和男朋友度过了非常开心的六天!

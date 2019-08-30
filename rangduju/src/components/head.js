@@ -34,7 +34,7 @@ class Head extends React.Component {
     return (
       <Router>
       <div>
-      <div className="head distance">
+      <div className="head">
       <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
         <Menu.Item key="home"  className="home">
           <Link to="/"><img src={require("../images/logo.png")} alt="返回首页"></img></Link>

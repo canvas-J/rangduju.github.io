@@ -11,6 +11,7 @@ a{
     color:#CCCCCC!important;
 }
 .head{
+    padding: 0 19%;
     overflow: hidden;
     border-bottom: .0625rem solid #CCCCCC;
 }
@@ -41,6 +42,7 @@ a{
     margin-top: -0.625rem;
 }
 .foot{
+    padding: 0 19%;
     display: flex;
     font-size: .875rem;
     min-height: 17.8125rem;
@@ -71,6 +73,9 @@ a{
     height: 5.3125rem;
 }
 @media only screen and (max-width: 992px){
+    .ant-menu .ant-menu-item a{
+        color: #1A1A1A!important;
+    }
     .head .home{
         margin-left: -3rem;
         margin-right: 7.25rem;
@@ -111,6 +116,9 @@ a{
     }
     .opportunity .ant-col-xl-4{
         width: 100%!important;
+    }
+    .distance{
+        padding: 0 9%;
     }
 }
 .cooperation img{
@@ -241,20 +249,55 @@ a{
 .first{
     font-size: .875rem;
 }
-.top .bottom{
-    color: #fff;
-    background-size:100% 100%;
-    background-image: url('../images/hezhuobeiji.png');
+.top{
+    padding-top: 1.875rem;
 }
-.top .bottom .ant-card{
-    color: #fff;
-    background-color: rgba(77,77,77,0);
-    border: none;
+.top .left{
+    width: 54%;
 }
-.top .bottom .ant-card-body{
-    font-size: .625rem;
-    padding: 0;
+.top .left > img{
+    width: 100%;
 }
+.top .right{
+    padding-top:8%; 
+    width: 46%;
+}
+.top .right .title{
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin: 0;
+}
+.top .right .label1{
+    font-size: 1rem;
+    margin-bottom: 1.8rem;
+}
+.top .right .label2{
+    margin-bottom: 0.5rem
+}
+.top .right .label3{
+    margin-bottom: 0;
+    margin-top: 0.5rem; 
+}
+.top .right .label1 > strong{
+    font-size: 1.375rem;
+}
+.top .right .ant-btn-primary{
+    background-color: #22222E;
+    border-color: #22222E;
+}
+.top .right .ant-btn-lg{
+    padding: 0 26px;
+}
+.top .right .ant-input-group-wrapper{
+    max-width: 28.125rem;
+}
+.top .right .ant-input:hover{
+    border-color: #22222E;
+}
+.top .bottom img{
+    width: 100%;
+}
+
 .opportunity{
     margin-top: 3.875rem;
 }
@@ -412,19 +455,19 @@ a{
     /* margin-bottom: -2.375rem; */
 }
 .first .infiniteListExample .title > img{
-    width: 4%;
+    width: 1.875rem;
     /* height: 2.6875rem; */
-    margin-right: 2%;
+    margin-right: .625rem;
     height: auto;
     border-radius: 100%;
 
 }
 .first .infiniteListExample .text{
-    padding-left: 6%;
+    padding-left: 2rem;
 }
 .first .infiniteListExample .time{
     text-align: right;
 }
 .first .infiniteListExample > li{ padding-left:0!important;margin:0!important;list-style:none}
-.first .infiniteListExample{padding-right: 1rem;}
+.first .infiniteListExample{padding-right: 1rem; padding-left:0}
 
