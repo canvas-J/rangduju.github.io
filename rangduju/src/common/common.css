@@ -147,6 +147,9 @@ a{
     .top .left{
         width: 100%!important;
     }
+    .operate .decorate{
+        display: none;
+    }
     .operate .item_img{
         display: none;
     }
@@ -154,13 +157,32 @@ a{
         width: 100%!important;
         color: #fff;
         margin-top: 0!important;
-        /* padding-left: 0; */
-        padding: .625rem .625rem!important;
-        background-size:cover;
-        background-image: url("../images/zhizhujuedinghezhuofangan.png");
+        padding-top: 2.5rem!important;
+        padding-left: 2.5rem!important;
+        background-color:rgba(2,108,223,0.8);
+    }
+    .operate .item_right{
+        background:rgba(34,34,46,0.8);
+        padding-right: 0!important;
+    }
+    .operate .three{
+        background:rgba(0,201,121,0.8);
+    }
+    .operate .three img{
+        height: 4.75rem!important;
     }
     .operate .item > div{
         width: 100%!important;
+    }
+    .operate .item .dis-flex img{
+        display: initial!important;
+        width: 6.875rem;
+        height: 6.25rem;
+        margin-left: .625rem;
+        margin-top: 1.5rem;
+    }
+    .operate .item .item_title{
+        margin-bottom: .75rem; 
     }
     .operate .item .item_title > p:first-child{
         color: #fff!important;
@@ -391,6 +413,9 @@ a{
     position: absolute;
     right: 0;
     margin-top: -92px;
+}
+.operate .item .dis-flex img{
+    display: none;
 }
 .operate .title{
     font-size: 1.25rem;
