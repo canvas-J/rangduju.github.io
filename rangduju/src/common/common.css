@@ -73,6 +73,9 @@ a{
     height: 5.3125rem;
 }
 @media only screen and (max-width: 992px){
+    .flex-w{
+        flex-wrap: wrap;
+    }
     .ant-menu .ant-menu-item a{
         color: #1A1A1A!important;
     }
@@ -119,6 +122,51 @@ a{
     }
     .distance{
         padding: 0 9%;
+    }
+    .top{
+        padding-top: 1rem!important;
+    }
+    .top .right{
+        display: none;
+    }
+    .top .l_top{
+        display: initial!important;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+    .top .l_top .title{
+        font-size: 1.25rem;
+        color: #4D4D4D;
+        font-weight: 600;
+        margin-bottom: .375rem;
+    }
+    .top .l_top .label1{
+     font-size: .75rem;
+    }
+    .top .left{
+        width: 100%!important;
+    }
+    .operate .item_img{
+        display: none;
+    }
+    .operate .item{
+        width: 100%!important;
+        color: #fff;
+        margin-top: 0!important;
+        /* padding-left: 0; */
+        padding: .625rem .625rem!important;
+        background-size:cover;
+        background-image: url("../images/zhizhujuedinghezhuofangan.png");
+    }
+    .operate .item > div{
+        width: 100%!important;
+    }
+    .operate .item .item_title > p:first-child{
+        color: #fff!important;
+    }
+    .operate .item .item_title > p:nth-child(2){
+        display: none;
     }
 }
 .cooperation img{
@@ -249,6 +297,9 @@ a{
 .first{
     font-size: .875rem;
 }
+.top .l_top{
+    display: none;
+}
 .top{
     padding-top: 1.875rem;
 }
@@ -261,15 +312,22 @@ a{
 .top .right{
     padding-top:8%; 
     width: 46%;
+    text-align: right;
+    padding-right: 18%;
 }
 .top .right .title{
-    font-size: 1.875rem;
+    width: 33.25rem;
+    font-size: 2.55rem;
     font-weight: 600;
     margin: 0;
+    margin-bottom: 10%;
+    border-bottom: 1px solid rgba(77,77,77,0.1);
+    overflow: hidden;
 }
 .top .right .label1{
     font-size: 1rem;
     margin-bottom: 1.8rem;
+    
 }
 .top .right .label2{
     margin-bottom: 0.5rem
