@@ -19,8 +19,8 @@ class Foot extends React.Component {
                         </a>
                         </label>
                     <label>
-                    <a href="https://www.zhipin.com/gongsi/7129188de810def203N_3d65EQ~~.html?ka=search_list_company_1_custompage" rel="noopener noreferrer" target="_blank">
-                        BOSS直聘
+                    <a href="https://www.ciweishixi.com/company/detail-28377.html" rel="noopener noreferrer" target="_blank">
+                        刺猬实习
                         </a>
                         </label>
                 </div>

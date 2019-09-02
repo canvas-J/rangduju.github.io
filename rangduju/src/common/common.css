@@ -126,8 +126,11 @@ a{
     .top{
         padding-top: 1rem!important;
     }
-    .top .right{
+    .top .right,.pc{
         display: none;
+    }
+    .top .move{
+        display: initial;
     }
     .top .l_top{
         display: initial!important;
@@ -146,6 +149,37 @@ a{
     }
     .top .left{
         width: 100%!important;
+    }
+    .top .bottom .collaborate{
+        flex-wrap: wrap;
+        width: 100%!important;
+        margin-right: 0!important;
+        margin-top: 20%!important;
+    }
+    .top .bottom .collaborate > li{
+        margin-left: 14%!important;
+    }
+    .top .bottom .collaborate .nf{
+        width: 2.5rem;
+        max-height: 4.125rem;
+    }
+    .top .bottom .collaborate .hh{
+        width: 5rem;
+        max-height: 4.125rem;
+    }
+    .top .bottom .collaborate .as{
+        width: 3.375rem;
+        max-height: 4.125rem;
+    }
+    .top .bottom .collaborate .hl{
+        width: 7.875rem;
+        max-height: 4.125rem;
+        margin-top: .2rem;
+    }
+    .top .bottom .collaborate .de{
+        width: 5.25rem;
+        max-height: 4.125rem;
+        margin-top: .2rem;
     }
     .operate .decorate{
         display: none;
@@ -311,7 +345,7 @@ a{
      margin-bottom: 6.25rem;
  }
 .evaluate > p{
-    width: 5rem;
+    width: 5.3rem;
     font-size: 1.25rem;
     font-weight:600;
     border-bottom: 1px solid rgba(77,77,77,0.1);
@@ -319,7 +353,11 @@ a{
 .first{
     font-size: .875rem;
 }
-.top .l_top{
+.top .play .ant-btn:hover,.ant-btn:focus{
+    color:#08Cf11!important;
+    border-color: #08Cf11!important;
+}
+.top .l_top,.move{
     display: none;
 }
 .top{
@@ -377,14 +415,29 @@ a{
 .top .bottom img{
     width: 100%;
 }
-
+.top .bottom > ul,li{
+    padding:0;margin:0;list-style:none
+}
+.top .bottom .collaborate{
+    position: absolute;
+    right: 0;
+    margin-top: 8.6%;
+    margin-right: 18%;
+    width: 46%;
+}
+.top .bottom .collaborate > li{
+    margin-left:8%; 
+}
+.top .bottom .collaborate > li > a > img{
+    height: 90%;
+}
 .opportunity{
     margin-top: 3.875rem;
 }
 .opportunity > p{
     font-size: 1.25rem;
     font-weight: 600;
-    width: 10rem;
+    width: 10.3rem;
     border-bottom: .0625rem solid rgba(77,77,77,0.1);
     margin-bottom: 2.875rem;
 }
@@ -421,7 +474,7 @@ a{
     font-size: 1.25rem;
     font-weight: 600;
     color: #4D4D4D;
-    width: 10rem;
+    width: 10.3rem;
     margin-left: 19%;
     border-bottom: 1px solid rgba(77,77,77,0.1);
     margin-top: 3.125rem;
@@ -470,7 +523,7 @@ a{
     width: 100%;
 }
 .dataAnalysis .title{
-    width: 11.25rem;
+    width: 11.5rem;
     font-size: 1.25rem;
     font-weight:600;
     margin: auto;
