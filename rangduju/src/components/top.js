@@ -12,13 +12,13 @@ class Top extends React.Component {
                     <div className="l_top">
                         <p className="title">让渡居 · 专业的短租解决方案</p>
                         <p className="label1">我们可以为您的房子赚取高出传统长租最多<strong>40%</strong>的收益方案</p>
-                        <p><a href="https://rangduju-ziyuan-1257675361.cos.ap-beijing.myqcloud.com/%E8%AE%A9%E6%B8%A1%E5%B1%85.mp4" rel="noopener noreferrer" target="_blank" className="play"><Button icon="play-circle">观看视频</Button></a></p>
+                        <p><a href="https://rangduju-ziyuan-1257675361.cos.ap-beijing.myqcloud.com/%E8%AE%A9%E6%B8%A1%E5%B1%85.m4v" rel="noopener noreferrer" target="_blank" className="play"><Button icon="play-circle">观看视频</Button></a></p>
                     </div>
                     <div className="left"><img src={require("../images/top.gif")} alt="动图"></img></div>
                     <div className="right">
                         <p className="title">让渡居 · 专业的短租解决方案</p>
                         <p className="label1">我们可以为您的房子<br />赚取高出传统长租最多<strong>40%</strong>的收益方案</p>
-                        <p><a href="https://rangduju-ziyuan-1257675361.cos.ap-beijing.myqcloud.com/%E8%AE%A9%E6%B8%A1%E5%B1%85.mp4" rel="noopener noreferrer" target="_blank" className="play"><Button icon="play-circle">观看视频</Button></a></p>
+                        <p><a href="https://rangduju-ziyuan-1257675361.cos.ap-beijing.myqcloud.com/%E8%AE%A9%E6%B8%A1%E5%B1%85.m4v" rel="noopener noreferrer" target="_blank" className="play"><Button icon="play-circle">观看视频</Button></a></p>
                         {/* <p className="label2">我们将提供从头到尾的一揽子服务</p> */}
                         {/* <Search
                             placeholder="搜索"
