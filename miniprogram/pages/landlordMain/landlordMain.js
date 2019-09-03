@@ -147,21 +147,22 @@ Page({
           // 更新global var的inCode
           app.globalData.inCode = this.data.inCode
 
-          db.collection("profit").where({
-            invCode: this.data.inCode
-          }).get({
-            success: res => {
-              this.setData({
-                signDate: res.data[0].date_sign,
-              })
-            },
-            fail: err => {
-              wx.showToast({
-                icon: 'none',
-                title: '查询记录失败'
-              })
-            }
-          })
+          // db.collection("profit").where({
+          //   invCode: this.data.inCode
+          // }).get({
+          //   success: res => {
+          //     this.setData({
+          //       signDate: res.data[0].date_sign,
+          //     })
+          //   },
+          //   fail: err => {
+          //     console.log(err)
+          //     wx.showToast({
+          //       icon: 'none',
+          //       title: '查询记录失败'
+          //     })
+          //   }
+          // })
         }
       },
       fail: err => {

@@ -11,7 +11,7 @@
     <view class="page__desc">超额收益：{{extraProfit}} RMB</view>
     <view class="page__desc">房东毛收益：{{landlordGrossIncome}} RMB</view>
      <view class="page__desc">---- </view>
-    <view class="page__desc">总可变成本：{{variableCost}} RMB</view>
+    <!-- <view class="page__desc">总可变成本：{{variableCost}} RMB</view> -->
     <view class="page__desc">总固定成本：{{cost}} RMB</view>
      <view class="page__desc">---- </view>
     <view class="page__desc">房东代支付：{{landlordRefund}} RMB</view>
