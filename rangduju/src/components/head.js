@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu} from 'antd';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter  as Router, Route, Link } from 'react-router-dom';
 
 import Home from './home';
 import Cooperation from './cooperation';
