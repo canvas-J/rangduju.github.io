@@ -1,0 +1,4 @@
+<!--miniprogram/pages/logon/logon.wxml-->
+<view class="logon">
+<button open-type="getUserInfo" bindgetuserinfo="userInfoHandler">立即进入</button>
+</view>

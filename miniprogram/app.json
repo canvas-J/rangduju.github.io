@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/logon/logon",
     "pages/home/home",
     "pages/notification/notification",
     "pages/houseDetail/houseDetail",
@@ -19,7 +20,8 @@
     "pages/service/cleanImageHistory/cleanImageHistory",
     "pages/houseDetail/MonthProfit/MonthProfit",
     "pages/management/RDJMonthProfit/RDJMonthProfit",
-    "pages/reservation/reservation"
+    "pages/reservation/reservation",
+    "pages/paymentTest/paymentTest"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

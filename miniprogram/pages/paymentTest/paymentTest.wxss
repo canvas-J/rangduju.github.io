@@ -1,0 +1,7 @@
+/* pages/paymentTest/paymentTest.wxss */
+.payBtn{
+  font-size: 16px;
+  margin-top: 80rpx;
+  border: 1px solid #CCC;
+  margin: 40rpx 20rpx;
+}

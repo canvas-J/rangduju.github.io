@@ -61,6 +61,7 @@ Page({
       invCode: app.globalData.inCode,
     }).count({
       success: res => {
+        console.log(res.total)
         totalNum = res.total
         this.quertyNoti()
       }
@@ -71,7 +72,7 @@ Page({
   quertyNoti: function() {
     db.collection("notifications").where({
       invCode: app.globalData.inCode,
-      _id: _.gt(totalNum - 20)
+      // _id: _.gt(totalNum - 20)
     }).get({
       success: res => {
         console.log("查询成功", res)

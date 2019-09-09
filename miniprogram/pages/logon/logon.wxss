@@ -1,0 +1,9 @@
+/* miniprogram/pages/logon/logon.wxss */
+.logon{
+  height: 100vh;
+  margin-top: 40vh;
+}
+.logon button{
+  margin: 0 20rpx;
+  border: 1px solid #CCC;
+}

@@ -1,0 +1,3 @@
+<!--pages/paymentTest/paymentTest.wxml-->
+<button class="payBtn" bindtap="pay">支付清洁费</button>
+

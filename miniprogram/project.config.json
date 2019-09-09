@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -62,6 +62,13 @@
 					"id": -1,
 					"name": "pages/reservation/reservation",
 					"pathName": "pages/reservation/reservation",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "支付测试",
+					"pathName": "pages/paymentTest/paymentTest",
 					"scene": null
 				}
 			]

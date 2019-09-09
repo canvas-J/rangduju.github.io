@@ -42,6 +42,7 @@ Page({
       // }
     ]
   },
+
   kindToggle: function(e) {
     var id = e.currentTarget.id
     console.log(id)
@@ -69,9 +70,5 @@ Page({
       })
     }
   },
-  ab(){
-    console.log(123)
-  }
-  
 });
 
