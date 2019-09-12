@@ -41,6 +41,13 @@ a{
     height: 1.9375rem;
     margin-top: -0.625rem;
 }
+.foot_bottom{
+    color: #CCCCCC;
+    font-size: .75rem;
+    text-align: center;
+    background-color: #000;
+    padding-bottom: 0.5rem;
+}
 .foot{
     padding: 0 19%;
     display: flex;

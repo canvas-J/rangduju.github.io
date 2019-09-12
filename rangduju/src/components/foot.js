@@ -3,6 +3,7 @@ import React from 'react';
 class Foot extends React.Component {
     render() {
         return (
+            <div>
             <div className="foot">
                 <div>
                     <label className="label_frist">联系我们</label>
@@ -28,6 +29,12 @@ class Foot extends React.Component {
                     <label className="label_frist">微信公众号</label>
                     <img src={require("../images/2wm.png")} className="qrcode" alt="公众号"></img>
                 </div>
+            </div>
+            <div className='foot_bottom'>
+            <p>©2019 让渡居科技（上海）有限公司</p>
+            <p><a href="http://beian.miit.gov.cn" rel="noopener noreferrer" target="_blank">
+            沪ICP备19031849号</a></p>
+            </div>
             </div>
         );
     }
