@@ -130,7 +130,7 @@ Page({
       console.log(159)
     } else {
       wx.showToast({
-        title: '您点击了拒绝',
+        title: '您点击了取消',
         icon: 'none',
         duration: 2000
       })

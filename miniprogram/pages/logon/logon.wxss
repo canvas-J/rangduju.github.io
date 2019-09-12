@@ -1,9 +1,20 @@
 /* miniprogram/pages/logon/logon.wxss */
 .logon{
   height: 100vh;
-  margin-top: 40vh;
+}
+.logo{
+  text-align: center;
+  margin-bottom: 16vh;
 }
 .logon button{
-  margin: 0 20rpx;
+  margin: 0 50rpx;
+  color: #fff;
+  background-color: #08cf11;
   border: 1px solid #CCC;
+}
+.text{
+  margin-top: 320rpx;
+  font-size: 26rpx;
+  color: #08cf11;
+  text-align: center;
 }

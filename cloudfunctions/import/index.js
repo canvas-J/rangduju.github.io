@@ -30,10 +30,14 @@ async function getData() {
   console.log(-1);
   return new Promise((resolve, reject) => {
     request.get(
-      `http://x89ej8.natappfree.cc/wechat/tables-data?tablename=fangdong`,
+      `http://534pxa.natappfree.cc/wechat/tables-data?tablename=fencheng`,
+      
       {
+        headers: {
+          'wechat-key':'8538e210-9a14-4522-b170-3c406f4d8e66'
+        },
         body: JSON.stringify({
-          
+ 
         })
       },
       (err, res, body) => {
@@ -80,7 +84,7 @@ async function processing (res,fileContent,filePath) {
     'file': fileContent.data
   }
   
- new Promise((resolve, reject) => {
+  new Promise((resolve, reject) => {
     request({
       url:res.url,
       method:"POST",
@@ -100,7 +104,7 @@ async function processing (res,fileContent,filePath) {
 }
 
 // 创建导入任务
-async function createImportJob(accessToken, collection) {
+async function createImportJob(accessToken, collection, path) {
  console.log(2)
   return new Promise((resolve, reject) => {
     request.post(
@@ -108,8 +112,8 @@ async function createImportJob(accessToken, collection) {
       {
         body: JSON.stringify({
           env,
-          collection_name: collection,
-          file_path: `data/fangdong.json`,
+          collection_name: collection.tableName,
+          file_path:path,
           file_type: 1,
           stop_on_error: false,
           conflict_mode: 2
@@ -156,6 +160,7 @@ async function waitJobFinished(accessToken, jobId) {
 exports.main = async (event, context) => {
   // 从云函数环境变量中读取 appid 和 secret 以及数据集合
   // const { appid, secret, backupColl, backupInfoColl } = process.env;
+  // console.log(process.env,18889888);
   const appid ='wxa712c55f4c3f00c8';
   const secret = 'acb68f2789eb791f07aa719cad1f950a';
   const backupColl='backupInfoColl';
@@ -171,12 +176,13 @@ exports.main = async (event, context) => {
     }
     //获取数据
     const data = await getData();
+    console.log(data);
     let path= 'data/'+data.tableName+'.json'
     const file = await uploadFile(access_token, path);
     const upload = await processing(file, data, path);
 
     // 导入数据库
-    const { errmsg: jobErrMsg, errcode: jobErrCode, job_id } = await createImportJob(access_token, backupColl);
+    const { errmsg: jobErrMsg, errcode: jobErrCode, job_id } = await createImportJob(access_token, data, path);
 
     // 打印到日志中
     console.log(job_id);
