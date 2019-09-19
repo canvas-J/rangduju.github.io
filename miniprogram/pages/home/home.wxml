@@ -29,6 +29,8 @@
     </view>
     
   </view>
+  <!-- <button bindtap="upimg">上传测试</button> -->
+  <button open-type="getUserInfo" bindgetuserinfo="userInfoHandler" wx:if='{{!disabled}}'>登录</button>
   <view class="page__ft">
     <button open-type='feedback' class="feedback">意见反馈</button>
     <view class="weui-footer__text" style="color:#A9A9A9">Copyright © 2019 让渡居</view>

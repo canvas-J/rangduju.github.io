@@ -1,3 +1,5 @@
 <!--pages/paymentTest/paymentTest.wxml-->
-<button class="payBtn" bindtap="pay">支付清洁费</button>
-
+<view class="paymentTest">
+<button class="payBtn" bindtap="pay" disabled="{{!disabled}}">支付清洁费</button>
+<text wx:if="{{!disabled}}" bindtap="skip">请先去首页登录</text>
+</view>

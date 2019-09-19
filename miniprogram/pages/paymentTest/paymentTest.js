@@ -2,6 +2,9 @@
 const db = wx.cloud.database();
 let userName;
 let newDate;
+let auth;
+
+const app=getApp();
 
 Page({
 
@@ -9,13 +12,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    this.setData({
+      disabled:app.globalData.logon
+    })
     auth= wx.getStorageSync('auth');
     console.log(auth);
     userName=auth.nickName;
@@ -120,6 +126,12 @@ Page({
           }
         })
       })
+  },
+  //跳转到首页
+  skip(){
+    wx.reLaunch({
+      url: '../home/home',
+    })
   }
 
 })

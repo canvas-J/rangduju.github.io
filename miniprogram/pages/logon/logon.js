@@ -23,6 +23,7 @@ Page({
           wx.getUserInfo({
             success: res => {
               wx.setStorageSync("auth", res.userInfo); //把用户信息存入缓存
+              console.log(res.userInfo,'auth')
             }
           })
           wx.reLaunch({

@@ -12,6 +12,7 @@ App({
   },
 
   globalData: {
+    logon:false,
     inCode: null,
     adminInCode: null,
     serviceInCode: null,

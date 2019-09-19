@@ -1,7 +1,15 @@
 /* pages/paymentTest/paymentTest.wxss */
 .payBtn{
   font-size: 16px;
-  margin-top: 80rpx;
+  /* margin-top: 80rpx; */
   border: 1px solid #CCC;
   margin: 40rpx 20rpx;
+  margin-bottom: 10rpx;
+}
+.paymentTest{
+  text-align: center;
+}
+.paymentTest text{
+  font-size: 24rpx;
+  color: #08cf11;
 }
