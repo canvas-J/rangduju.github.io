@@ -5,6 +5,27 @@ import { Button } from 'antd';
 // const { Search } = Input;
 
 class Top extends React.Component {
+    constructor(props){
+        super();
+        this.state={
+            isShow:false,
+        }
+        this.clickShow=this.clickShow.bind(this)
+        this.clickHidden=this.clickHidden.bind(this)
+    }
+    clickShow(){
+        this.setState({isShow:true});
+        let video = document.getElementById('movie');
+        video.play(); 
+        console.log(this.state);
+      }
+    clickHidden(){
+        this.setState({isShow:false});
+        let video = document.getElementById('movie');
+        video.pause(); 
+        console.log(this.state);
+      }
+
     render() {
         return (
             <div className="top">
@@ -12,13 +33,13 @@ class Top extends React.Component {
                     <div className="l_top">
                         <p className="title">让渡居 · 专业的短租解决方案</p>
                         <p className="label1">我们可以为您的房子赚取高出传统长租最多<strong>40%</strong>的收益方案</p>
-                        <p><a href="https://rangduju-ziyuan-1257675361.cos.ap-beijing.myqcloud.com/%E8%AE%A9%E6%B8%A1%E5%B1%85.m4v" rel="noopener noreferrer" target="_blank" className="play"><Button icon="play-circle">观看视频</Button></a></p>
+                        <p><Button icon="play-circle" onClick={this.clickShow}>观看视频</Button></p>
                     </div>
                     <div className="left"><img src={require("../images/top.gif")} alt="动图"></img></div>
                     <div className="right">
                         <p className="title">让渡居 · 专业的短租解决方案</p>
                         <p className="label1">我们可以为您的房子<br />赚取高出传统长租最多<strong>40%</strong>的收益方案</p>
-                        <p><a href="https://rangduju-ziyuan-1257675361.cos.ap-beijing.myqcloud.com/%E8%AE%A9%E6%B8%A1%E5%B1%85.m4v" rel="noopener noreferrer" target="_blank" className="play"><Button icon="play-circle">观看视频</Button></a></p>
+                        <p><Button icon="play-circle" onClick={this.clickShow}>观看视频</Button></p>
                         {/* <p className="label2">我们将提供从头到尾的一揽子服务</p> */}
                         {/* <Search
                             placeholder="搜索"
@@ -37,8 +58,16 @@ class Top extends React.Component {
                         <li><a href="http://www.hoolihome.com/" rel="noopener noreferrer" target="_blank"><img src={require("../images/hl.png")} className="hl" alt="全球房产租售平台"></img></a></li>
                         <li><a href="http://www.delsk.com/" rel="noopener noreferrer" target="_blank"><img src={require("../images/de.png")} className="de" alt="戴尔斯克海外地产"></img></a></li>
                     </ul>
-                    <img src={require("../images/组10.png")} alt="合作方" className="pc"></img>
-                    <img src={require("../images/hz.png")} alt="合作方" className="move"></img>
+                    <img src={require("../images/组10.jpg")} alt="合作方" className="pc"></img>
+                    <img src={require("../images/hz.jpg")} alt="合作方" className="move"></img>
+                </div>
+                <div className='video' style={{display:this.state.isShow?"block":"none"}}>
+                    <div className='video_close' onClick={this.clickHidden}>X</div>
+                    <div className='video_container'>
+                    <video id='movie' src="https://rangduju-ziyuan-1257675361.cos.ap-beijing.myqcloud.com/%E8%AE%A9%E6%B8%A1%E5%B1%85.m4v" controls="controls">
+                        您的浏览器不支持 video 标签。
+                    </video>
+                    </div>
                 </div>
             </div>
         )

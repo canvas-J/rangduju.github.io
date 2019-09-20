@@ -12,23 +12,23 @@ class About extends React.Component{
                 {/* <iframe className="airtable-embed" src="https://airtable.com/embed/shrRfme06EYHbf6qB?backgroundColor=yellowLight&layout=card&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style={{background:'transparent',border:'1px solid #ccc'}}></iframe> */}
                 <div className="exhibition dis-flex">
                     <div className="group1">
-                        <div><img src={require("../images/tu1.png")} alt="图1"></img></div>
-                        <div><img src={require("../images/tu3.png")} alt="图2"></img></div>
-                        <div><img src={require("../images/tu5.png")} alt="图3"></img></div>
+                        <div><img src={require("../images/tu1.jpg")} alt="图1"></img></div>
+                        <div><img src={require("../images/tu3.jpg")} alt="图2"></img></div>
+                        <div><img src={require("../images/tu5.jpg")} alt="图3"></img></div>
                     </div>
                     <div className="group2">
                         <div className="dis-flex">
-                            <div><img src={require("../images/tu2.png")} alt="图4"></img></div>
+                            <div><img src={require("../images/tu2.jpg")} alt="图4"></img></div>
                             <div>
-                                <div><img src={require("../images/tu7.png")} alt="图5"></img></div>
-                                <div><img src={require("../images/tu6.png")} alt="图6"></img></div>
+                                <div><img src={require("../images/tu7.jpg")} alt="图5"></img></div>
+                                <div><img src={require("../images/tu6.jpg")} alt="图6"></img></div>
                             </div>
                         </div>
-                        <div><img src={require("../images/tu8.png")} alt="图7"></img></div>
+                        <div><img src={require("../images/tu8.jpg")} alt="图7"></img></div>
                     </div>
                     <div className="group3">
-                        <div><img src={require("../images/tu4.png")} alt="图8"></img></div>
-                        <div><img src={require("../images/tu10.png")} alt="图9"></img></div>
+                        <div><img src={require("../images/tu4.jpg")} alt="图8"></img></div>
+                        <div><img src={require("../images/tu10.jpg")} alt="图9"></img></div>
                     </div>
                 </div>
             </div>
