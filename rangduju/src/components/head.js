@@ -54,9 +54,9 @@ class Head extends React.Component {
       </Menu>
       </div>
       <Route exact path="/" component={Home}></Route>
-      <Route exact path="/doubt" component={Doubt}></Route>
-      <Route exact path="/cooperation" component={Cooperation}></Route>
-      <Route exact path="/about" component={About}></Route>
+      <Route path="/doubt" component={Doubt}></Route>
+      <Route path="/cooperation" component={Cooperation}></Route>
+      <Route path="/about" component={About}></Route>
       </div>
       </Router>
     );

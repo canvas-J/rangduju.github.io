@@ -32,9 +32,10 @@ class Foot extends React.Component {
             </div>
             <div className='foot_bottom'>
             <p>©2019 让渡居科技（上海）有限公司</p>
-            <p><a href="http://beian.miit.gov.cn" rel="noopener noreferrer" target="_blank">
+            <p><a target="_blank" rel="noopener noreferrer" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502038927" >京公网安备 11010502038927号</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://beian.miit.gov.cn" rel="noopener noreferrer" target="_blank">
             沪ICP备19031849号</a></p>
             </div>
+
             </div>
         );
     }
