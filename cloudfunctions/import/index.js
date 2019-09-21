@@ -26,11 +26,11 @@ async function getAccessToken(appid, secret) {
 }
 
 // // 获取数据
-async function getData() {
+async function getData(tablename) {
   console.log(-1);
   return new Promise((resolve, reject) => {
     request.get(
-      `http://534pxa.natappfree.cc/wechat/tables-data?tablename=fencheng`,
+      `https://api.rangduju.com/wechat/tables-data?tablename=` + tablename,
       
       {
         headers: {
@@ -52,7 +52,6 @@ async function getData() {
 
 //上传文件
 async function uploadFile(accessToken, path) {
-  console.log(0)
   return new Promise((resolve, reject) => {
     request.post(
       `https://api.weixin.qq.com/tcb/uploadfile?access_token=${accessToken}`,
@@ -100,6 +99,7 @@ async function processing (res,fileContent,filePath) {
         resolve(JSON.parse(body));
       }
     );
+    // console.log(12);
   });
 }
 
@@ -160,13 +160,12 @@ async function waitJobFinished(accessToken, jobId) {
 exports.main = async (event, context) => {
   // 从云函数环境变量中读取 appid 和 secret 以及数据集合
   // const { appid, secret, backupColl, backupInfoColl } = process.env;
-  // console.log(process.env,18889888);
+
+  let arr = ['tongzhi','fangyuan','fangdong','jizhang','shouru','fencheng']
   const appid ='wxa712c55f4c3f00c8';
   const secret = 'acb68f2789eb791f07aa719cad1f950a';
-  const backupColl='backupInfoColl';
-  
-  const db = cloud.database();
-
+ for(let i in arr){
+   console.log(i)
   try {
     // 获取 access_token
     const { errmsg, access_token } = await getAccessToken(appid, secret);
@@ -175,7 +174,7 @@ exports.main = async (event, context) => {
       throw new Error(`获取 access_token 失败：${errmsg}` || '获取 access_token 为空');
     }
     //获取数据
-    const data = await getData();
+    const data = await getData(arr[i]);
     console.log(data);
     let path= 'data/'+data.tableName+'.json'
     const file = await uploadFile(access_token, path);
@@ -200,4 +199,5 @@ exports.main = async (event, context) => {
     console.log(e,1998);
     throw new Error(`导入数据库异常：${e.message}`);
   }
+ }
 };
