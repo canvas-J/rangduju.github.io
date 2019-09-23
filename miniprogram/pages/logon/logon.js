@@ -16,22 +16,7 @@ Page({
    */
   onLoad: function(options) {
     this.getOpenid();
-    wx.getSetting({
-      success: (res) => {
-        console.log(res)
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: res => {
-              wx.setStorageSync("auth", res.userInfo); //把用户信息存入缓存
-              console.log(res.userInfo,'auth')
-            }
-          })
-          wx.reLaunch({
-            url: '../home/home',
-          })
-        }
-      }
-    })
+    
   },
 
   /**
