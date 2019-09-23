@@ -28,7 +28,7 @@ class DataAnalysis extends React.Component {
                   
                 </div>
                 <div className="last">
-                    <img src={this.state.value === 0?'https://user-images.githubusercontent.com/45256071/63920168-cfa09180-ca72-11e9-8583-535377ba64aa.png':'https://user-images.githubusercontent.com/45256071/63920200-df1fda80-ca72-11e9-9b67-59adef20f988.png'} alt="数据分析"></img>
+                    <img src={require(this.state.value === 0?'../images/renchi.png':'../images/yeshu.png')} alt="数据分析"></img>
                 </div>
             </div>
         )
