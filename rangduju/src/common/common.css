@@ -12,7 +12,7 @@ a{
     color:#CCCCCC!important;
 }
 .head{
-    padding: 0 19%;
+    /* padding: 0 19%; */
     overflow: hidden;
     border-bottom: .0625rem solid #CCCCCC;
 }
@@ -90,6 +90,9 @@ a{
     }
     .ant-menu .ant-menu-item a{
         color: #1A1A1A!important;
+    }
+    .head{
+    padding: 0 19%;
     }
     .head .home{
         margin-left: -3rem;
