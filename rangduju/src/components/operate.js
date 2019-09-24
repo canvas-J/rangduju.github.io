@@ -22,12 +22,13 @@ class Operate extends React.Component {
                 <div className="dis-flex">
                     <div className="item item_right">
                         <div className="item_title">
-                            <p>实时掌控最新房态</p>
                             <p></p>
+                            <p>实时掌控最新房态</p>
+                            {/* <p></p> */}
                         </div>
                         <div className="dis-flex">
                             我们全面掌握运营的所有流程，包括配置进度、保洁核验、维修，对于涉及房屋的一切变动，我们都会第一时间通知您。
-                            <img src={require("../images/shishi.png")} alt="自主"></img>
+                            <img src={require("../images/shishi.png")} alt="实时"></img>
                         </div>
                     </div>
                     <div className="item_img"><img src={require("../images/zhangwozuixingfangtai.png")} alt="最新房态"></img></div>
@@ -41,7 +42,7 @@ class Operate extends React.Component {
                         </div>
                         <div className="dis-flex">
                             您可以从微信小程序端浏览名下房屋的每月收益、空置率等情况，随时查看短租收益水平，直观感受共享经济带来的红利。
-                            <img src={require("../images/lishi.png")} alt="自主"></img>
+                            <img src={require("../images/lishi.png")} alt="收益"></img>
                         </div>
                     </div>
                 </div>

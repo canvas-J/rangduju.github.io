@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu} from 'antd';
+import { Menu } from 'antd';
 import { BrowserRouter  as Router, Route, Link } from 'react-router-dom';
 
 import Home from './home';
@@ -39,8 +39,8 @@ class Head extends React.Component {
         <Menu.Item key="home"  className="home">
           <Link to="/"><img src={require("../images/logo.png")} alt="返回首页"></img></Link>
         </Menu.Item>
-        <Menu.Item key="doubt">
-          <Link to="/doubt">常见疑惑</Link>
+        <Menu.Item key="faq">
+          <Link to="/faq">常见疑惑</Link>
         </Menu.Item>
         <Menu.Item key="cooperation">
           <Link to="/cooperation">如何合作</Link>
@@ -48,13 +48,16 @@ class Head extends React.Component {
         <Menu.Item key="about">
           <Link to="/about">关于我们</Link>
         </Menu.Item>
+        <Menu.Item key="landlord" >
+          <a href='http://rangduju.mikecrm.com/ULvW6oL' rel="noopener noreferrer" target="_blank">成为房东</a>
+        </Menu.Item>
         <Menu.Item key="foot" onClick={this.cscrollToAnchor}>
           联系我们
         </Menu.Item>
       </Menu>
       </div>
       <Route exact path="/" component={Home}></Route>
-      <Route path="/doubt" component={Doubt}></Route>
+      <Route path="/faq" component={Doubt}></Route>
       <Route path="/cooperation" component={Cooperation}></Route>
       <Route path="/about" component={About}></Route>
       </div>

@@ -1,6 +1,7 @@
 .distance{
     padding: 0 19%;
 }
+
 .text-center{
     text-align: center;
 }
@@ -17,6 +18,10 @@ a{
 }
 .head a{
     color: #1A1A1A!important;
+}
+.head .ant-menu{
+    text-align: center;
+    color: #1A1A1A;
 }
 .head .ant-menu-horizontal{
     border: none;
@@ -213,6 +218,9 @@ a{
         background:rgba(34,34,46,0.8);
         padding-right: 0!important;
     }
+    .operate .item_right .dis-flex{
+        margin-left: 0!important;
+    }
     .operate .three{
         background:rgba(0,201,121,0.8);
     }
@@ -234,6 +242,13 @@ a{
     }
     .operate .item .item_title > p:first-child{
         color: #fff!important;
+    }
+    .operate .item_right .item_title > p:nth-child(2){
+        display: block!important;
+        color: #fff!important;
+    }
+    .operate .item_right .item_title > p:first-child{
+        display: none;
     }
     .operate .item .item_title > p:nth-child(2){
         display: none;
@@ -387,10 +402,11 @@ a{
     padding-top:8%; 
     width: 46%;
     text-align: right;
-    padding-right: 18%;
+}
+.top .right > p{
+    width: 34rem;
 }
 .top .right .title{
-    width: 34rem;
     font-size: 2.55rem;
     font-weight: 600;
     margin: 0;
@@ -532,37 +548,54 @@ a{
     font-weight: 600;
     color: #4D4D4D;
     margin-bottom: 0;
+    white-space: nowrap;
 }
 .operate .item .item_title > p:nth-child(2) .line_color{
     background-color: rgba(0,201,121,0.2);
 }
 .operate .item .item_title > p:nth-child(2){
-    width: 82%;
+    width: 100%;
     height: .0625rem;
     background-color: rgba(2,108,223,0.2);
-    margin-left: 18%
+    margin-top: 1.5rem;
 }
-.operate .item_right .item_title > p:nth-child(2){
-    width: 72%;
+.operate .item_right .item_title > p:first-child{
+    width: 44%;
     height: .0625rem;
     background-color: rgba(34,34,46,0.2);
-    margin-left: -70%;
+    margin-top: 1.5rem;
+    margin-bottom: 1em;
+}
+.operate .item_right .item_title > p:nth-child(2){
+    width: initial;
+    height: initial;
+    background-color: initial;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4D4D4D;
+    margin: 0;
+    white-space: nowrap;
+    
+    /* margin-left: -70%; */
 }
 .operate .item > div{
     width: 50%;
 }
-.operate .item_right > div{
-    width: 84%;
+.operate .item_right .dis-flex{
+    margin-left: 44%;
 }
 .operate .item_right{
-    padding-left: 19%;
-    padding-right: 3.66%;
+    padding-left: 0;
+    padding-right: 0;
 }
 .operate .item_img{
     width: 50%;
 }
 .operate .item_img > img,.operate .item .item_title{
     width: 100%;
+}
+.operate .item .item_title{
+    display: flex;
 }
 .dataAnalysis .title{
     width: 11.5rem;
