@@ -27,7 +27,7 @@ class Foot extends React.Component {
                 </div>
                 <div className="text-center">
                     <label className="label_frist">微信公众号</label>
-                    <img src={require("../images/2wm.png")} className="qrcode" alt="公众号"></img>
+                    <img src={require("../images/2wm.jpg")} className="qrcode" alt="公众号"></img>
                 </div>
             </div>
             <div className='foot_bottom'>
