@@ -9,7 +9,6 @@
     "pages/service/orderList/orderList",
     "pages/uploadPageMain/uploadPageMain",
     "pages/landlordMain/landlordMain",
-    "pages/feedback/feedback",
     "pages/houseList/houseList",
     "pages/uploadImage/uploadImage",
     "pages/service/service",
@@ -21,6 +20,7 @@
     "pages/management/RDJMonthProfit/RDJMonthProfit",
     "pages/reservation/reservation",
     "pages/paymentTest/paymentTest",
+    "pages/feedback/feedback",
     "pages/logon/logon"
   ],
   "window": {

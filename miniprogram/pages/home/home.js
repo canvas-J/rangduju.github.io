@@ -47,6 +47,7 @@ Page({
     ]
   },
   onLoad: function (options) {
+    console.log(wx.getStorageSync('auth'))
     this.getOpenid();
     wx.getSetting({
       success: (res) => {

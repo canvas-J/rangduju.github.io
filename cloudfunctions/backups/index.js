@@ -82,12 +82,40 @@ async function waitJobFinished(accessToken, jobId) {
     }, 500);
   });
 }
+//传送url链接
+async function createExporturl(url) {
+  return new Promise((resolve, reject) => {
+    request.post(
+      `https://api.rangduju.com/wechat/wxcloud-url`,
+      {
+        headers: {
+          'Content-Type':'application/json',
+          'wechat-key': '8538e210-9a14-4522-b170-3c406f4d8e66'
+        },
+        body: JSON.stringify({
+          tableName:'fangke',
+          url:url
+        })
+      },
+      (err, res, body) => {
+        if (err) {
+          reject(err);
+        }
+
+        resolve(JSON.parse(body));
+        
+      }
+      
+    );
+  });
+}
+
 exports.main = async (event, context) => {
   // 从云函数环境变量中读取 appid 和 secret 以及数据集合
   // const { appid, secret, backupColl, backupInfoColl } = process.env;
   const appid ='wxa712c55f4c3f00c8';
   const secret = 'acb68f2789eb791f07aa719cad1f950a';
-  const backupColl='register';
+  const backupColl='fangke';
   const backupInfoColl ='backupInfoColl';
 
   const db = cloud.database();
@@ -121,19 +149,19 @@ exports.main = async (event, context) => {
     // 等待任务完成
     const fileUrl = await waitJobFinished(access_token, job_id);
 
+    await createExporturl(fileUrl);
     console.log('导出成功', fileUrl);
 
     // 存储到数据库
-    await db
-      .collection(backupInfoColl)
-      .doc(res._id)
-      .update({
-        data: {
-          fileUrl
-        }
-      });
+    // await db
+    //   .collection(backupInfoColl)
+    //   .doc(res._id)
+    //   .update({
+    //     data: {
+    //       fileUrl
+    //     }
+    //   });
   } catch (e) {
-    console.log(e,1998);
     throw new Error(`导出数据库异常：${e.message}`);
   }
 };
