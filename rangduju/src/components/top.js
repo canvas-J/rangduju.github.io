@@ -64,7 +64,7 @@ class Top extends React.Component {
                 <div className='video' style={{display:this.state.isShow?"block":"none"}}>
                     <div className='video_close' onClick={this.clickHidden}>X</div>
                     <div className='video_container'>
-                    <video id='movie' src="https://rangduju-ziyuan-1257675361.cos.ap-beijing.myqcloud.com/%E8%AE%A9%E6%B8%A1%E5%B1%85.m4v" controls="controls">
+                    <video id='movie' src="https://rangduju-ziyuan-1257675361.cos.ap-beijing.myqcloud.com/%E4%BA%A7%E5%93%81%E8%A7%86%E9%A2%91.mp4" controls="controls">
                         您的浏览器不支持 video 标签。
                     </video>
                     </div>
