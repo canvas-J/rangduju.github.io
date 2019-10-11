@@ -70,6 +70,7 @@ a{
 .foot div label{
     display: block;
     margin-bottom: 1.5625rem;
+    white-space: nowrap;
 }
 .foot div .label_frist{
     font-size: 1.3125rem;

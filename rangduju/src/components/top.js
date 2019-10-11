@@ -33,14 +33,14 @@ class Top extends React.Component {
                     <div className="l_top">
                         <p className="title">科技赋能房产，万物实现互联</p>
                         <p className="title1">— 让渡居·专业的短租解决方案</p>
-                        <p className="label1">我们可以为您的房子赚取高出传统长租最多<strong>40%</strong>的收益方案</p>
+                        <p className="label1">我们可以为您的房子赚取高出传统长租最多<strong>40%</strong>的收益</p>
                         <p className='btn1'><Button icon="play-circle" onClick={this.clickShow}>观看视频</Button></p>
                     </div>
                     <div className="left"><img src={require("../images/top.gif")} alt="动图"></img></div>
                     <div className="right">
                         <p className="title">科技赋能房产，万物实现互联</p>
                         <p className="title1">— 让渡居·专业的短租解决方案</p>
-                        <p className="label1">我们可以为您的房子赚取高出传统长租最多<strong>40%</strong>的收益方案</p>
+                        <p className="label1">我们可以为您的房子赚取高出传统长租最多<strong>40%</strong>的收益</p>
                         <p><Button icon="play-circle" onClick={this.clickShow}>观看视频</Button></p>
                         {/* <p className="label2">我们将提供从头到尾的一揽子服务</p> */}
                         {/* <Search
