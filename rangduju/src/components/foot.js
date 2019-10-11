@@ -25,6 +25,14 @@ class Foot extends React.Component {
                         </a>
                         </label>
                 </div>
+                <div className="nudge">
+                    <label className="label_frist">条款</label>
+                    <label>
+                        <a href="#" rel="noopener noreferrer" target="_blank">
+                        隐私政策
+                        </a>
+                        </label>
+                </div>
                 <div className="text-center">
                     <label className="label_frist">微信公众号</label>
                     <img src={require("../images/2wm.jpg")} className="qrcode" alt="公众号"></img>

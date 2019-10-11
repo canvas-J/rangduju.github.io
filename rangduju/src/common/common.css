@@ -149,18 +149,32 @@ a{
     }
     .top .l_top{
         display: initial!important;
-        text-align: center;
+        /* text-align: center; */
         margin: auto;
         margin-bottom: 1rem;
     }
     .top .l_top .title{
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         color: #4D4D4D;
         font-weight: 600;
-        margin-bottom: .375rem;
+        text-align: right;
+        margin-top: 1.625rem;
+        margin-bottom: .5rem;
+    }
+    .top .l_top .title1{
+        text-align: right;
+        font-size: 1.2rem;
+        color: #4D4D4D;
+        font-weight: 600;
+        margin-bottom: 3rem;
+    }
+    .top .l_top .btn1{
+        text-align: center;
+        margin-bottom: 2rem;
     }
     .top .l_top .label1{
      font-size: .75rem;
+     margin-bottom: 2rem;
     }
     .top .left{
         width: 100%!important;
@@ -295,6 +309,7 @@ a{
     color:#08CC16!important;
 }
 .about .exhibition{
+    margin-top: 9.0625rem;
     margin-bottom: 5rem;
 }
 .about .exhibition img{
@@ -413,9 +428,14 @@ a{
     font-size: 2.55rem;
     font-weight: 600;
     margin: 0;
-    margin-bottom: 10%;
-    border-bottom: 1px solid rgba(77,77,77,0.1);
+    /* margin-bottom: 10%; */
+    /* border-bottom: 1px solid rgba(77,77,77,0.1); */
     overflow: hidden;
+}
+.top .right .title1{
+    margin-top: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 .top .right .label1{
     font-size: 1rem;
