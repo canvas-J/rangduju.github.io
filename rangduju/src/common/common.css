@@ -176,6 +176,7 @@ a{
     .top .l_top .label1{
      font-size: .75rem;
      margin-bottom: 2rem;
+     text-align: right;
     }
     .top .left{
         width: 100%!important;
@@ -304,10 +305,16 @@ a{
     font-size: 400;
     color:#000;
     line-height: 2.125rem;
-    margin-bottom: 9.0625rem; 
+    margin-bottom: 8.0625rem; 
 }
 .about .synopsis a{
     color:#08CC16!important;
+}
+.about .teamtitle{
+    text-align: center;
+    font-size: 1.625rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 .about .exhibition{
     margin-top: 9.0625rem;
