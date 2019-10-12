@@ -311,10 +311,10 @@ a{
     color:#08CC16!important;
 }
 .about .teamtitle{
-    text-align: center;
-    font-size: 1.625rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    color: #4D4D4D;
+    margin-bottom: 1.75rem;
 }
 .about .exhibition{
     margin-top: 9.0625rem;
