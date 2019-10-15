@@ -55,7 +55,7 @@ a{
 }
 .foot{
     padding: 0 19%;
-    display: flex;
+    /* display: flex; */
     font-size: .875rem;
     min-height: 17.8125rem;
     color:#CCCCCC;
@@ -65,7 +65,9 @@ a{
     padding-bottom: .625rem;
 }
 .foot > div{
-    flex:1;
+    /* flex:1; */
+    width: 25%;
+    float: left;
 }
 .foot div label{
     display: block;
@@ -79,7 +81,7 @@ a{
     white-space: nowrap;
 }
 .foot .nudge{
-    margin-left: 15%;
+    padding-left: 10%;
 }
 .foot .qrcode{
     width: 5.3125rem;
@@ -121,11 +123,14 @@ a{
         text-align: center;
     }
     .foot > div{
-        flex:none;
+        /* flex:none; */
         width: 100%;
     }
     .foot .nudge{
-        margin: 0;
+        padding: 0;
+    }
+    .foot .qrcode{
+        margin-bottom: 1.25rem;
     }
     .first .work{
         flex-wrap: wrap;
@@ -147,6 +152,7 @@ a{
     }
     .top .move{
         display: initial;
+        height:19.375rem!important;
     }
     .top .l_top{
         display: initial!important;
@@ -185,10 +191,13 @@ a{
         flex-wrap: wrap;
         width: 100%!important;
         margin-right: 0!important;
-        margin-top: 20%!important;
+        margin-top: 21%!important;
     }
     .top .bottom .collaborate > li{
         margin-left: 14%!important;
+    }
+    .top .bottom .collaborate > li:last-child{
+        margin-left: 24%!important;
     }
     .top .bottom .collaborate .nf{
         width: 2.5rem;
@@ -487,7 +496,7 @@ a{
     width: 46%;
 }
 .top .bottom .collaborate > li{
-    margin-left:8%; 
+    margin-left:5%; 
 }
 .top .bottom .collaborate > li > a > img{
     height: 90%;
@@ -665,6 +674,12 @@ a{
     padding-top: 4.625rem;
     padding-bottom: 3.125rem;
     border-bottom: 1px solid rgba(77,77,77,0.1);
+}
+.ant-card-body{
+    padding: 0!important;
+}
+.ant-card-bordered{
+    border: none!important;
 }
 .first .work{
     padding: 2.1875rem 19%;
