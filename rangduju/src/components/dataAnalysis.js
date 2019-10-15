@@ -16,11 +16,10 @@ import 'echarts/lib/component/markPoint';
 import ReactEcharts from 'echarts-for-react';
 
 class DataAnalysis extends React.Component {
-  async componentWillMount() {
+  componentWillMount() {
     //主题的设置要在willmounted中设置
     // echarts.registerTheme('Imooc',echartTheme);
-    await this.getdata();
-    await this.sum();
+     this.getdata();
   }
   constructor() {
     super();
@@ -34,6 +33,7 @@ class DataAnalysis extends React.Component {
   getdata =async () => {
     let peopleArr=[];
     let monthArr=[];
+    let people=0,day=0;
     const init = {
       mode: 'cors',
       method: 'GET',
@@ -49,27 +49,18 @@ class DataAnalysis extends React.Component {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        let people=data.data.peopleSum;
-        let day=data.data.monthSum;
+        people += data.data.peopleSum;
+        day += data.data.monthSum;
         monthArr.push(day)
         peopleArr.push(people);
       })
       .catch(e => console.log('错误:', e))
     }
     this.setState({
+      sum:people,
       oneArr:peopleArr,
       twoArr:monthArr,
       data:peopleArr
-    })
-  }
-  sum = () => {
-    let sum=0;
-    let arr=this.state.oneArr;
-    for(let i in arr){
-      sum += arr[i];
-    }
-    this.setState({
-      sum:sum
     })
   }
 
