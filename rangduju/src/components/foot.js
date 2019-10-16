@@ -28,8 +28,13 @@ class Foot extends React.Component {
                 <div className="nudge">
                     <label className="label_frist">条款</label>
                     <label>
+                        <a href="https://mp.weixin.qq.com/s/YoqpzK5aiqZF8lNLZVchEg" rel="noopener noreferrer" target="_blank">
+                        使用条款
+                        </a>
+                        </label>
+                    <label>
                         <a href="https://mp.weixin.qq.com/s/A0yEHZeXwKPzIl8R5PC0sw" rel="noopener noreferrer" target="_blank">
-                        隐私政策
+                        隐私保护
                         </a>
                         </label>
                 </div>
