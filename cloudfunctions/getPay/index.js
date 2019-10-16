@@ -19,8 +19,8 @@ exports.main = async (event, context) => {
   const attach = event.attach
   const body = event.body
   const total_fee = event.total_fee
-  const notify_url = "https://whatever.com/notify" //最好填上自己服务器的url
-  const spbill_create_ip = "118.89.40.200"
+  const notify_url = "https://rangduju.com/notify" //最好填上自己服务器的url
+  const spbill_create_ip = "49.234.214.140"
   const nonce_str = Math.random().toString(36).substr(2, 15)
   const timeStamp = parseInt(Date.now() / 1000) + ''
   const out_trade_no = "otn" + nonce_str + timeStamp
@@ -45,5 +45,5 @@ exports.main = async (event, context) => {
   if (xml.indexOf('prepay_id') < 0) return xml
   let prepay_id = xml.split("<prepay_id>")[1].split("</prepay_id>")[0].split('[')[2].split(']')[0]
   let paySign = paysign({ appId: appid, nonceStr: nonce_str, package: ('prepay_id=' + prepay_id), signType: 'MD5', timeStamp: timeStamp })
-  return { appid, nonce_str, timeStamp, prepay_id, paySign }
+  return { appid, nonce_str, timeStamp, prepay_id, paySign}
 }
