@@ -44,7 +44,7 @@ class DataAnalysis extends React.Component {
     }
     for(let i=6;i<13;i++){
     await fetch(
-      'https://api.rangduju.com/wechat/rent-info?year=2019&month='+i, init
+      'https://api.rangduju.com/wechat/rent-info?year=2019&status=已完成&month='+i, init
     )
       .then(res => res.json())
       .then(data => {
