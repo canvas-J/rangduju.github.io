@@ -55,11 +55,11 @@ class Top extends React.Component {
                 <div className="bottom">
                     <ul className="dis-flex collaborate">
                         <li><a href="https://nuan.io/hello-wechat" rel="noopener noreferrer" target="_blank"><img src={require("../images/nf.jpg")} className="nf" alt="暖房直租"></img></a></li>
-                        <li><a href="http://www.huohetech.com/" rel="noopener noreferrer" target="_blank"><img src={require("../images/he.jpg")} className="hh" alt="火河智能"></img></a></li>
+                        <li><a href="http://www.huohetech.com/" rel="noopener noreferrer" target="_blank"><img src={require("../images/he.png")} className="hh" alt="火河智能"></img></a></li>
                         <li><a href="http://www.hkhplus.com/index/platform" rel="noopener noreferrer" target="_blank"><img src={require("../images/as.jpg")} className="as" alt="艾仕佳科技"></img></a></li>
                         <li><a href="http://www.hoolihome.com/" rel="noopener noreferrer" target="_blank"><img src={require("../images/hl.jpg")} className="hl" alt="全球房产租售平台"></img></a></li>
                         <li><a href="http://www.delsk.com/" rel="noopener noreferrer" target="_blank"><img src={require("../images/de.jpg")} className="de" alt="戴尔斯克海外地产"></img></a></li>
-                        <li><a href="https://space.bilibili.com/303517323/" rel="noopener noreferrer" target="_blank"><img src={require("../images/wj.jpg")} className="wj" alt="租房五金少女"></img></a></li>
+                        <li><a href="https://space.bilibili.com/303517323/" rel="noopener noreferrer" target="_blank"><img src={require("../images/wj.png")} className="wj" alt="租房五金少女"></img></a></li>
                     </ul>
                     <img src={require("../images/组10.jpg")} alt="合作方" className="pc"></img>
                     <img src={require("../images/hz1.jpg")} alt="合作方" className="move"></img>
